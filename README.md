@@ -20,7 +20,7 @@ na jakim się znajduje.
  - Tworzenie podglądu magazynu 2D
  - Graficzna lokalizacja asortymentu
  - Obsługa portu USB – Sprawdzanie czy czytnik jest podpięty.
- - Funkcja „Sprzedawcy” - Sprzedaż produktów, ustawianie promocji.
+ - Funkcja „Sprzedawcy” czyli sprzedaż produktów, ustawianie promocji.
  
  #MILESTONES
  
