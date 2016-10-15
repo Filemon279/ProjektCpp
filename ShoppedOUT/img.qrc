@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>Img/barcode.jpg</file>
+        <file>Img/barcode-306926_1280.png</file>
+        <file>Img/bg.jpg</file>
+        <file>Img/bg_dark.jpg</file>
+        <file>Img/historia.jpg</file>
+        <file>Img/img.qrc</file>
+        <file>Img/long_shoppedOUT_logo.png</file>
+        <file>Img/long_shoppedOUT_logo_big.png</file>
+        <file>Img/long_shoppedOUT_logo_white.png</file>
+        <file>Img/magazyn.jpg</file>
+        <file>Img/promocje.jpg</file>
+        <file>Img/sale-shelf-1517551_1920.jpg</file>
+        <file>Img/school-683567_1920.jpg</file>
+        <file>Img/square_shoppedOUT_logo.png</file>
+        <file>Img/square_shoppedOUT_logo_big.png</file>
+    </qresource>
+</RCC>
