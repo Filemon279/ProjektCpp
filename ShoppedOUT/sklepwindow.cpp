@@ -1,0 +1,14 @@
+#include "sklepwindow.h"
+#include "ui_sklepwindow.h"
+
+SklepWindow::SklepWindow(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::SklepWindow)
+{
+    ui->setupUi(this);
+}
+
+SklepWindow::~SklepWindow()
+{
+    delete ui;
+}
