@@ -12,24 +12,172 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>875</width>
-    <height>504</height>
+    <width>980</width>
+    <height>546</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ShoppedOUT</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background: url(:/img/Img/long_shoppedOUT_logo_big.png);</string>
+   <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralWidget">
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="MainWidget">
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">this-&gt;setStyleSheet(&quot;background-image: url(:/img/Img/bg.jpg);&quot;);</string>
+    <string notr="true">#MainWidget {border-image: url(:/img/Img/bg_dark.jpg);}
+
+</string>
    </property>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>371</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/Img/long_shoppedOUT_logo_white.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sklepButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>130</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#sklepButton{
+border-image: url(:/img/Img/sklep.png);
+font: 87 20pt &quot;Arial Black&quot;;
+color:white;
+border-width: 3px;
+border-radius: 7px;
+}
+#sklepButton:pressed {
+border-image: url(:/img/Img/sklep_clicked.png);
+
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>SKLEP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="codeButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>340</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#codeButton{
+border-image: url(:/img/Img/barcode.png);
+font: 87 20pt &quot;Arial Black&quot;;
+color:white;
+border-width: 3px;
+border-radius: 7px;
+}
+#codeButton:pressed {
+border-image: url(:/img/Img/barcode_clicked.png);
+
+}</string>
+    </property>
+    <property name="text">
+     <string>KODY KRESKOWE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="settingButton">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>340</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#settingButton {
+border-image: url(:/img/Img/ustawienia.png);
+font: 87 20pt &quot;Arial Black&quot;;
+color:white;
+border-width: 3px;
+border-radius: 7px;
+}
+#settingButton:pressed {
+border-image: url(:/img/Img/ustawienia_clicked.png);
+
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>USTAWIENIA</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="magazynButton">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>130</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#magazynButton {
+border-image: url(:/img/Img/warehouse.png);
+font: 87 20pt &quot;Arial Black&quot;;
+color:white;
+border-width: 3px;
+border-radius: 7px;
+}
+#magazynButton:pressed {
+border-image: url(:/img/Img/warehouse_clicked.png);
+
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>MAGAZYN</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
