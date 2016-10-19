@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\sklepwindow.o
+./release\magazynwindow.o
+./release\kodywindow.o
+./release\settingswindow.o
+./release\qrc_resource.o
+./release\moc_mainwindow.o
+./release\moc_sklepwindow.o
+./release\moc_magazynwindow.o
+./release\moc_kodywindow.o
+./release\moc_settingswindow.o
+);

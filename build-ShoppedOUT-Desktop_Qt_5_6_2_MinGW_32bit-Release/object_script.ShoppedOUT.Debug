@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\sklepwindow.o
+./debug\magazynwindow.o
+./debug\kodywindow.o
+./debug\settingswindow.o
+./debug\qrc_resource.o
+./debug\moc_mainwindow.o
+./debug\moc_sklepwindow.o
+./debug\moc_magazynwindow.o
+./debug\moc_kodywindow.o
+./debug\moc_settingswindow.o
+);
