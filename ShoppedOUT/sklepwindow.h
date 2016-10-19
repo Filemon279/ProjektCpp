@@ -15,6 +15,9 @@ public:
     explicit SklepWindow(QWidget *parent = 0);
     ~SklepWindow();
 
+private slots:
+    void on_SklepWindow_finished(int result);
+
 private:
     Ui::SklepWindow *ui;
 };

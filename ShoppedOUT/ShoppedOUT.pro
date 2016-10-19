@@ -14,13 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    sklepwindow.cpp
+    sklepwindow.cpp \
+    magazynwindow.cpp \
+    kodywindow.cpp \
+    settingswindow.cpp
 
 HEADERS  += mainwindow.h \
-    sklepwindow.h
+    sklepwindow.h \
+    magazynwindow.h \
+    kodywindow.h \
+    settingswindow.h
 
 FORMS    += mainwindow.ui \
-    sklepwindow.ui
+    sklepwindow.ui \
+    magazynwindow.ui \
+    kodywindow.ui \
+    settingswindow.ui
 
 RESOURCES += \
     resource.qrc

@@ -20,6 +20,12 @@ private slots:
 
     void on_sklepButton_clicked();
 
+    void on_magazynButton_clicked();
+
+    void on_settingButton_clicked();
+
+    void on_codeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

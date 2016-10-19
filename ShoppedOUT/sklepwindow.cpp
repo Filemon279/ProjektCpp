@@ -1,4 +1,5 @@
 #include "sklepwindow.h"
+#include "mainwindow.h"
 #include "ui_sklepwindow.h"
 
 SklepWindow::SklepWindow(QWidget *parent) :
@@ -11,4 +12,9 @@ SklepWindow::SklepWindow(QWidget *parent) :
 SklepWindow::~SklepWindow()
 {
     delete ui;
+}
+
+void SklepWindow::on_SklepWindow_finished(int result)
+{
+
 }
