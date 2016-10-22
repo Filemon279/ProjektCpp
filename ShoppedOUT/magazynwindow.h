@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "bazadanych.h"
 
+
 namespace Ui {
 class magazynWindow;
 }
@@ -19,10 +20,14 @@ public:
 private slots:
 
     void receiveBaza(QSqlDatabase Baza);
-
+    void odswiezBaze();
     void on_pushButton_5_clicked();
 
     void on_pushButton_4_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::magazynWindow *ui;

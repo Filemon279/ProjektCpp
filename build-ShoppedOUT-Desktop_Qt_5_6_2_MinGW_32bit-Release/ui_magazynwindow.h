@@ -40,6 +40,7 @@ public:
     QLineEdit *linia;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
     QLabel *StanPolaczenia;
     QTextEdit *test;
 
@@ -91,13 +92,16 @@ public:
         pushButton_5 = new QPushButton(asortymentBox);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(550, 320, 111, 31));
+        pushButton_6 = new QPushButton(asortymentBox);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(250, 320, 101, 31));
         StanPolaczenia = new QLabel(magazynWindow);
         StanPolaczenia->setObjectName(QStringLiteral("StanPolaczenia"));
         StanPolaczenia->setGeometry(QRect(20, 555, 381, 31));
         StanPolaczenia->setFont(font);
         test = new QTextEdit(magazynWindow);
         test->setObjectName(QStringLiteral("test"));
-        test->setGeometry(QRect(20, 400, 761, 191));
+        test->setGeometry(QRect(20, 470, 761, 71));
 
         retranslateUi(magazynWindow);
 
@@ -113,6 +117,7 @@ public:
         pushButton_3->setText(QApplication::translate("magazynWindow", "Usu\305\204", 0));
         pushButton_4->setText(QApplication::translate("magazynWindow", "Zapisz zmiany", 0));
         pushButton_5->setText(QApplication::translate("magazynWindow", "Pobierz ponownie", 0));
+        pushButton_6->setText(QApplication::translate("magazynWindow", "Dodaj Wiersz", 0));
         StanPolaczenia->setText(QString());
     } // retranslateUi
 
