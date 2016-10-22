@@ -5,6 +5,7 @@ INPUT(
 ./debug\magazynwindow.o
 ./debug\kodywindow.o
 ./debug\settingswindow.o
+./debug\bazadanych.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_sklepwindow.o

@@ -5,6 +5,7 @@ INPUT(
 ./release\magazynwindow.o
 ./release\kodywindow.o
 ./release\settingswindow.o
+./release\bazadanych.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
 ./release\moc_sklepwindow.o

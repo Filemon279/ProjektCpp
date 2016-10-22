@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,6 +31,8 @@ public:
     QPushButton *codeButton;
     QPushButton *settingButton;
     QPushButton *magazynButton;
+    QTextEdit *adminText;
+    QLabel *statusBazy;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -37,7 +40,7 @@ public:
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
         MainWindow->setEnabled(true);
-        MainWindow->resize(980, 546);
+        MainWindow->resize(980, 636);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -120,6 +123,21 @@ public:
 ""));
         magazynButton->setCheckable(false);
         magazynButton->setAutoDefault(true);
+        adminText = new QTextEdit(MainWidget);
+        adminText->setObjectName(QStringLiteral("adminText"));
+        adminText->setEnabled(false);
+        adminText->setGeometry(QRect(670, 570, 311, 71));
+        statusBazy = new QLabel(MainWidget);
+        statusBazy->setObjectName(QStringLiteral("statusBazy"));
+        statusBazy->setGeometry(QRect(20, 590, 221, 31));
+        QFont font;
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        statusBazy->setFont(font);
+        statusBazy->setStyleSheet(QLatin1String("color:green\n"
+""));
         MainWindow->setCentralWidget(MainWidget);
 
         retranslateUi(MainWindow);
@@ -138,6 +156,7 @@ public:
         codeButton->setText(QApplication::translate("MainWindow", "KODY KRESKOWE", 0));
         settingButton->setText(QApplication::translate("MainWindow", "USTAWIENIA", 0));
         magazynButton->setText(QApplication::translate("MainWindow", "MAGAZYN", 0));
+        statusBazy->setText(QString());
     } // retranslateUi
 
 };

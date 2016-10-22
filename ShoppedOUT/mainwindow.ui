@@ -13,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>980</width>
-    <height>546</height>
+    <height>636</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -176,6 +176,44 @@ border-image: url(:/img/Img/warehouse_clicked.png);
     </property>
     <property name="default">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="adminText">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>570</y>
+      <width>311</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="statusBazy">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>590</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:green
+</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

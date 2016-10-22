@@ -22,7 +22,7 @@
      <x>540</x>
      <y>20</y>
      <width>251</width>
-     <height>291</height>
+     <height>371</height>
     </rect>
    </property>
    <property name="font">
@@ -110,6 +110,19 @@
     </property>
     <property name="text">
      <string>Połącz</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="infoField">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>231</width>
+      <height>71</height>
+     </rect>
     </property>
    </widget>
   </widget>

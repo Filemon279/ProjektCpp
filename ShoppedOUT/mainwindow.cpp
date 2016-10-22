@@ -1,15 +1,28 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "sklepwindow.h"
 #include "settingswindow.h"
 #include "kodywindow.h"
 #include "magazynwindow.h"
+#include "bazadanych.h"
+#include <QtCore/QCoreApplication>
+#include <QtSQL>
+
+bool setting=false;
+bool sklep=false;
+bool magazyn = false;
+bool kody = false;
+
+
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+settingswindow.setModal(true);
+//ui->statusBazy->setText(Baza.connect());
 
    this->setMinimumSize(QSize(this->width(),this->height()));
    this->setMaximumSize(QSize(this->width(),this->height()));
@@ -27,29 +40,53 @@ void MainWindow::on_sklepButton_pressed()
 
 void MainWindow::on_sklepButton_clicked()
 {
-   SklepWindow sklepwindow;
-   sklepwindow.setModal(true);
+   sklepwindow = new SklepWindow(this);
+   sklepwindow->setModal(true);
+
    this->hide();
-   sklepwindow.exec();
+
+   sklepwindow->exec();
    this->show();
+
 }
 
 void MainWindow::on_magazynButton_clicked()
 {
-    magazynWindow magazynwindow;
-    magazynwindow.setModal(true);
+    magazynwindow = new  magazynWindow(this);
+    magazynwindow->setModal(true);
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)), magazynwindow,SLOT(receiveBaza(QSqlDatabase)));
+    emit sendBaza(Baza.db);
     this->hide();
-    magazynwindow.exec();
+    magazynwindow->exec();
     this->show();
 }
 
 void MainWindow::on_settingButton_clicked()
 {
-    SettingsWindow settingswindow;
-    settingswindow.setModal(true);
+if(!setting)
+{
     this->hide();
     settingswindow.exec();
+    setting=true;
+
+
     this->show();
+  /*  if(settingswindow.baza)  { ui->statusBazy->setText("Połączono");
+        ui->statusBazy->setStyleSheet("color:green");}
+    else   { ui->statusBazy->setText("Brak połączenia");
+        ui->statusBazy->setStyleSheet("color:red");}*/
+}
+else
+{
+    this->hide();
+    settingswindow.show();
+    setting=true;
+    this->show();
+  /*   if(settingswindow.baza) { ui->statusBazy->setText("Połączono");
+         ui->statusBazy->setStyleSheet("color:green");}
+     else { ui->statusBazy->setText("Brak połączenia");
+     ui->statusBazy->setStyleSheet("color:red");}*/
+}
 }
 
 void MainWindow::on_codeButton_clicked()

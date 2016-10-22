@@ -46,6 +46,7 @@ public:
     QLineEdit *lineEdit_6;
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
+    QLabel *label_7;
 
     void setupUi(QDialog *kodywindow)
     {
@@ -77,7 +78,7 @@ public:
         pushButton->setGeometry(QRect(10, 330, 131, 31));
         pushButton_2 = new QPushButton(kodyBox);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(270, 360, 91, 31));
+        pushButton_2->setGeometry(QRect(270, 370, 91, 21));
         lineEdit = new QLineEdit(kodyBox);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(80, 190, 281, 20));
@@ -87,7 +88,7 @@ public:
         lineEdit_2->setGeometry(QRect(10, 370, 131, 20));
         label_2 = new QLabel(kodyBox);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(25, 193, 47, 20));
+        label_2->setGeometry(QRect(25, 190, 47, 20));
         QFont font1;
         font1.setFamily(QStringLiteral("Arial"));
         font1.setPointSize(10);
@@ -120,7 +121,7 @@ public:
         lineEdit_5->setGeometry(QRect(80, 250, 31, 20));
         label_5 = new QLabel(kodyBox);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(110, 250, 81, 20));
+        label_5->setGeometry(QRect(110, 250, 16, 20));
         label_5->setFont(font1);
         label_5->setStyleSheet(QStringLiteral("color:white"));
         label_6 = new QLabel(kodyBox);
@@ -130,7 +131,7 @@ public:
         label_6->setStyleSheet(QStringLiteral("color:white"));
         lineEdit_6 = new QLineEdit(kodyBox);
         lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(140, 270, 221, 20));
+        lineEdit_6->setGeometry(QRect(140, 270, 201, 20));
         radioButton = new QRadioButton(kodyBox);
         radioButton->setObjectName(QStringLiteral("radioButton"));
         radioButton->setGeometry(QRect(240, 250, 61, 17));
@@ -143,6 +144,11 @@ public:
         radioButton_2->setFont(font1);
         radioButton_2->setStyleSheet(QLatin1String("color:white\n"
 ""));
+        label_7 = new QLabel(kodyBox);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(340, 270, 21, 20));
+        label_7->setFont(font1);
+        label_7->setStyleSheet(QStringLiteral("color:white"));
 
         retranslateUi(kodywindow);
 
@@ -164,6 +170,7 @@ public:
         label_6->setText(QApplication::translate("kodywindow", "Cena:", 0));
         radioButton->setText(QApplication::translate("kodywindow", "Netto", 0));
         radioButton_2->setText(QApplication::translate("kodywindow", "Brutto", 0));
+        label_7->setText(QApplication::translate("kodywindow", "z\305\202", 0));
     } // retranslateUi
 
 };

@@ -193,6 +193,8 @@ Makefile: ../ShoppedOUT/ShoppedOUT.pro C:/Qt/Qt5.6.2/5.6/mingw49_32/mkspecs/win3
 		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/qtmain.prl \
 		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Gui.prl \
+		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Network.prl \
+		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Sql.prl \
 		C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ -o Makefile ..\ShoppedOUT\ShoppedOUT.pro
 C:/Qt/Qt5.6.2/5.6/mingw49_32/mkspecs/features/spec_pre.prf:
@@ -329,6 +331,8 @@ C:/Qt/Qt5.6.2/5.6/mingw49_32/mkspecs/features/lex.prf:
 C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/qtmain.prl:
 C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Gui.prl:
+C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Network.prl:
+C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Sql.prl:
 C:/Qt/Qt5.6.2/5.6/mingw49_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ -o Makefile ..\ShoppedOUT\ShoppedOUT.pro

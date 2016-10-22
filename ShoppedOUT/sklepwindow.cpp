@@ -18,3 +18,10 @@ void SklepWindow::on_SklepWindow_finished(int result)
 {
 
 }
+
+
+void SklepWindow::receiveBaza(bazadanych Baza)
+{
+ ui->displayNetto->setText(Baza.connect());
+
+}

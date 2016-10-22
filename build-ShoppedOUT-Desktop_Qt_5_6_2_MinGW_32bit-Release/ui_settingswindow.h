@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,6 +32,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QTextEdit *infoField;
     QGroupBox *wizualizacjaBox;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
@@ -43,7 +45,7 @@ public:
         SettingsWindow->setStyleSheet(QStringLiteral("#SettingsWindow {border-image: url(:/img/Img/bg_dark.jpg);}"));
         BazaBox = new QGroupBox(SettingsWindow);
         BazaBox->setObjectName(QStringLiteral("BazaBox"));
-        BazaBox->setGeometry(QRect(540, 20, 251, 291));
+        BazaBox->setGeometry(QRect(540, 20, 251, 371));
         QFont font;
         font.setFamily(QStringLiteral("Arial"));
         font.setPointSize(12);
@@ -73,6 +75,10 @@ public:
         pushButton_3 = new QPushButton(BazaBox);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(10, 240, 231, 41));
+        infoField = new QTextEdit(BazaBox);
+        infoField->setObjectName(QStringLiteral("infoField"));
+        infoField->setEnabled(true);
+        infoField->setGeometry(QRect(10, 290, 231, 71));
         wizualizacjaBox = new QGroupBox(SettingsWindow);
         wizualizacjaBox->setObjectName(QStringLiteral("wizualizacjaBox"));
         wizualizacjaBox->setGeometry(QRect(20, 20, 501, 291));

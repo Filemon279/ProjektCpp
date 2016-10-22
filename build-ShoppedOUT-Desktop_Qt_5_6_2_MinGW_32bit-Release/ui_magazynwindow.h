@@ -16,10 +16,12 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,11 +32,16 @@ public:
     QGroupBox *asortymentBox;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QTableView *tableView;
+    QTableWidget *asortyment;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QLineEdit *linia;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QLabel *StanPolaczenia;
+    QTextEdit *test;
 
     void setupUi(QDialog *magazynWindow)
     {
@@ -59,9 +66,9 @@ public:
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 739, 229));
-        tableView = new QTableView(scrollAreaWidgetContents);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(0, 0, 741, 231));
+        asortyment = new QTableWidget(scrollAreaWidgetContents);
+        asortyment->setObjectName(QStringLiteral("asortyment"));
+        asortyment->setGeometry(QRect(0, 0, 741, 231));
         scrollArea->setWidget(scrollAreaWidgetContents);
         pushButton = new QPushButton(asortymentBox);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -75,6 +82,22 @@ public:
         pushButton_3 = new QPushButton(asortymentBox);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(670, 320, 81, 31));
+        linia = new QLineEdit(asortymentBox);
+        linia->setObjectName(QStringLiteral("linia"));
+        linia->setGeometry(QRect(362, 50, 201, 20));
+        pushButton_4 = new QPushButton(asortymentBox);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(130, 320, 111, 31));
+        pushButton_5 = new QPushButton(asortymentBox);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(550, 320, 111, 31));
+        StanPolaczenia = new QLabel(magazynWindow);
+        StanPolaczenia->setObjectName(QStringLiteral("StanPolaczenia"));
+        StanPolaczenia->setGeometry(QRect(20, 555, 381, 31));
+        StanPolaczenia->setFont(font);
+        test = new QTextEdit(magazynWindow);
+        test->setObjectName(QStringLiteral("test"));
+        test->setGeometry(QRect(20, 400, 761, 191));
 
         retranslateUi(magazynWindow);
 
@@ -88,6 +111,9 @@ public:
         pushButton->setText(QApplication::translate("magazynWindow", "Skanuj", 0));
         pushButton_2->setText(QApplication::translate("magazynWindow", "Dodaj Wiele", 0));
         pushButton_3->setText(QApplication::translate("magazynWindow", "Usu\305\204", 0));
+        pushButton_4->setText(QApplication::translate("magazynWindow", "Zapisz zmiany", 0));
+        pushButton_5->setText(QApplication::translate("magazynWindow", "Pobierz ponownie", 0));
+        StanPolaczenia->setText(QString());
     } // retranslateUi
 
 };

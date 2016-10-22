@@ -2,6 +2,7 @@
 #define SKLEPWINDOW_H
 
 #include <QDialog>
+#include "bazadanych.h"
 
 namespace Ui {
 class SklepWindow;
@@ -17,6 +18,7 @@ public:
 
 private slots:
     void on_SklepWindow_finished(int result);
+    void receiveBaza(bazadanych Baza);
 
 private:
     Ui::SklepWindow *ui;

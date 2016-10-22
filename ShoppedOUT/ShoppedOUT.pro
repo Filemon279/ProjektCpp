@@ -4,26 +4,28 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ShoppedOUT
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     sklepwindow.cpp \
     magazynwindow.cpp \
     kodywindow.cpp \
-    settingswindow.cpp
+    settingswindow.cpp \
+    bazadanych.cpp
 
 HEADERS  += mainwindow.h \
     sklepwindow.h \
     magazynwindow.h \
     kodywindow.h \
-    settingswindow.h
+    settingswindow.h \
+    bazadanych.h
 
 FORMS    += mainwindow.ui \
     sklepwindow.ui \
