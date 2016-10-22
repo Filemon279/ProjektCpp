@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "bazadanych.h"
+#include "QTableWidgetItem"
 
 
 namespace Ui {
@@ -29,8 +30,13 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_szukajField_textChanged(const QString &arg1);
+
 private:
     Ui::magazynWindow *ui;
+    int Columns;
+    int Rows;
+     QList<QTableWidgetItem *> allItems;
 };
 
 #endif // MAGAZYNWINDOW_H

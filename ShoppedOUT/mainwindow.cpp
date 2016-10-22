@@ -13,8 +13,6 @@ bool magazyn = false;
 bool kody = false;
 
 
-
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
