@@ -148,6 +148,7 @@ void magazynWindow::odswiezBaze()
 
 
  ui->asortyment->show();
+     ui->asortyment->resizeColumnsToContents();
 }
 
 void magazynWindow::on_pushButton_3_clicked()

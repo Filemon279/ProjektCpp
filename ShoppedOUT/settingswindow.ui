@@ -19,10 +19,10 @@
   <widget class="QGroupBox" name="BazaBox">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>20</y>
-     <width>251</width>
-     <height>371</height>
+     <x>20</x>
+     <y>390</y>
+     <width>461</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="font">
@@ -39,21 +39,88 @@
    <property name="title">
     <string>Baza Danych</string>
    </property>
-   <widget class="QListView" name="listView">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>231</width>
-      <height>141</height>
+      <x>90</x>
+      <y>30</y>
+      <width>151</width>
+      <height>20</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
+      <x>310</x>
+      <y>30</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>90</y>
+      <width>61</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Połącz</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>Port</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>IP</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
       <width>191</width>
       <height>20</height>
      </rect>
@@ -61,7 +128,29 @@
     <property name="font">
      <font>
       <family>Arial</family>
-      <pointsize>11</pointsize>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>OBECNE POŁĄCZENIE:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="StanPolaczenia">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>441</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -70,69 +159,96 @@
      <string notr="true">color:white</string>
     </property>
     <property name="text">
-     <string>Zapisane Bazy Danych</string>
+     <string>.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
-      <width>111</width>
-      <height>23</height>
+      <y>60</y>
+      <width>81</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
     </property>
     <property name="text">
-     <string>Dodaj nową bazę</string>
+     <string>Użytkownik</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>210</y>
-      <width>101</width>
-      <height>23</height>
+      <x>310</x>
+      <y>60</y>
+      <width>141</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>60</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
     </property>
     <property name="text">
-     <string>Usuń Bazę z listy</string>
+     <string>Hasło</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>240</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Połącz</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="infoField">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>290</y>
-      <width>231</width>
-      <height>71</height>
-     </rect>
-    </property>
-   </widget>
+   <zorder>wizualizacjaBox</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>StanPolaczenia</zorder>
+   <zorder>label_6</zorder>
+   <zorder>lineEdit_3</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>label_7</zorder>
   </widget>
   <widget class="QGroupBox" name="wizualizacjaBox">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
-     <width>501</width>
-     <height>291</height>
+     <y>10</y>
+     <width>761</width>
+     <height>371</height>
     </rect>
    </property>
    <property name="font">
@@ -152,8 +268,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>404</x>
-      <y>250</y>
+      <x>660</x>
+      <y>330</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -165,8 +281,8 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>5</x>
-      <y>250</y>
+      <x>10</x>
+      <y>330</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -175,6 +291,63 @@
      <string>Stwórz Projekt</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>170</y>
+      <width>361</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>TRWAJĄ PRACE NAD TĄ FUNKCJONALNOŚCIĄ</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTextEdit" name="infoField">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>500</y>
+     <width>291</width>
+     <height>91</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>480</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+   <property name="text">
+    <string>Logs Panel</string>
+   </property>
   </widget>
  </widget>
  <resources/>

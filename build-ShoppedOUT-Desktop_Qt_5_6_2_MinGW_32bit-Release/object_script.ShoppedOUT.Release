@@ -6,10 +6,12 @@ INPUT(
 ./release\kodywindow.o
 ./release\settingswindow.o
 ./release\bazadanych.o
+./release\skanowanie.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
 ./release\moc_sklepwindow.o
 ./release\moc_magazynwindow.o
 ./release\moc_kodywindow.o
 ./release\moc_settingswindow.o
+./release\moc_skanowanie.o
 );

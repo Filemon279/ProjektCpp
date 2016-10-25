@@ -1,8 +1,5 @@
 #include "settingswindow.h"
 #include "ui_settingswindow.h"
-#include "bazadanych.h"
-
-
 #include <QtCore/QCoreApplication>
 #include <QtSQL>
 
@@ -45,9 +42,36 @@ SettingsWindow::~SettingsWindow()
 
 }
 
+void SettingsWindow::receiveBaza(QSqlDatabase Baza)
+{
+    if (!Baza.isOpen()) {
+        ui->StanPolaczenia->setText("Brak połączenia\n");
+            ui->StanPolaczenia->setStyleSheet("color:red");
+
+    }
+    else
+    {
+         ui->StanPolaczenia->setText("Połączono");
+             ui->StanPolaczenia->setStyleSheet("color:green");
+
+    }
+
+
+}
+
+
+
 void SettingsWindow::on_pushButton_3_clicked()
 {
 
 }
 
 
+
+void SettingsWindow::on_pushButton_6_clicked()
+{
+  //  Baza.setHostName("127.0.0.1");
+ //   Baza.setDatabaseName("sklep");
+ //   Baza.setUserName("root");
+ //   Baza.setPassword("root");
+}

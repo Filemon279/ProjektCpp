@@ -18,20 +18,23 @@ SOURCES += main.cpp\
     magazynwindow.cpp \
     kodywindow.cpp \
     settingswindow.cpp \
-    bazadanych.cpp
+    bazadanych.cpp \
+    skanowanie.cpp
 
 HEADERS  += mainwindow.h \
     sklepwindow.h \
     magazynwindow.h \
     kodywindow.h \
     settingswindow.h \
-    bazadanych.h
+    bazadanych.h \
+    skanowanie.h
 
 FORMS    += mainwindow.ui \
     sklepwindow.ui \
     magazynwindow.ui \
     kodywindow.ui \
-    settingswindow.ui
+    settingswindow.ui \
+    skanowanie.ui
 
 RESOURCES += \
     resource.qrc

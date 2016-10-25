@@ -31,8 +31,11 @@ public: void connectDB();
 
 
 private slots:
+    void receiveBaza(QSqlDatabase Baza);
     void on_pushButton_3_clicked();
 
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::SettingsWindow *ui;

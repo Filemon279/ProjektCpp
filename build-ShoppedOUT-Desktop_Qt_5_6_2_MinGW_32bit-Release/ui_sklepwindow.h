@@ -48,6 +48,7 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QTableView *tableView;
+    QLabel *StanPolaczenia;
 
     void setupUi(QDialog *SklepWindow)
     {
@@ -74,6 +75,7 @@ public:
         pushButton_3 = new QPushButton(koszykBox);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(10, 40, 301, 51));
+        pushButton_3->setStyleSheet(QStringLiteral("#SklepWindow {border-image: url(:/img/Img/bg_dark.jpg);}"));
         displayNetto = new QLineEdit(koszykBox);
         displayNetto->setObjectName(QStringLiteral("displayNetto"));
         displayNetto->setEnabled(false);
@@ -117,7 +119,7 @@ public:
         pushButton_5->setGeometry(QRect(10, 430, 301, 41));
         wyszukajBox = new QGroupBox(SklepWindow);
         wyszukajBox->setObjectName(QStringLiteral("wyszukajBox"));
-        wyszukajBox->setGeometry(QRect(570, 19, 221, 571));
+        wyszukajBox->setGeometry(QRect(570, 19, 221, 531));
         wyszukajBox->setFont(font);
         wyszukajBox->setStyleSheet(QLatin1String("#wyszukajBox {color: white}\n"
 ""));
@@ -129,18 +131,22 @@ public:
         lineEdit->setGeometry(QRect(10, 60, 201, 20));
         pushButton_2 = new QPushButton(wyszukajBox);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 530, 201, 31));
+        pushButton_2->setGeometry(QRect(10, 490, 201, 31));
         scrollArea = new QScrollArea(wyszukajBox);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setGeometry(QRect(10, 90, 201, 431));
+        scrollArea->setGeometry(QRect(10, 90, 201, 391));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 199, 429));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 199, 389));
         tableView = new QTableView(scrollAreaWidgetContents);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(0, 0, 201, 431));
+        tableView->setGeometry(QRect(0, 0, 201, 391));
         scrollArea->setWidget(scrollAreaWidgetContents);
+        StanPolaczenia = new QLabel(SklepWindow);
+        StanPolaczenia->setObjectName(QStringLiteral("StanPolaczenia"));
+        StanPolaczenia->setGeometry(QRect(576, 559, 211, 31));
+        StanPolaczenia->setFont(font);
 
         retranslateUi(SklepWindow);
 
@@ -160,6 +166,7 @@ public:
         wyszukajBox->setTitle(QApplication::translate("SklepWindow", "Wyszukaj", 0));
         pushButton->setText(QApplication::translate("SklepWindow", "Skanuj", 0));
         pushButton_2->setText(QApplication::translate("SklepWindow", "Dodaj do koszyka", 0));
+        StanPolaczenia->setText(QApplication::translate("SklepWindow", ".", 0));
     } // retranslateUi
 
 };

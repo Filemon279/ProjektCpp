@@ -19,8 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-settingswindow.setModal(true);
-//ui->statusBazy->setText(Baza.connect());
 
    this->setMinimumSize(QSize(this->width(),this->height()));
    this->setMaximumSize(QSize(this->width(),this->height()));
@@ -40,9 +38,9 @@ void MainWindow::on_sklepButton_clicked()
 {
    sklepwindow = new SklepWindow(this);
    sklepwindow->setModal(true);
-
+   connect(this,SIGNAL(sendBaza(QSqlDatabase)), sklepwindow,SLOT(receiveBaza(QSqlDatabase)));
+  emit sendBaza(Baza.db);
    this->hide();
-
    sklepwindow->exec();
    this->show();
 
@@ -61,30 +59,13 @@ void MainWindow::on_magazynButton_clicked()
 
 void MainWindow::on_settingButton_clicked()
 {
-if(!setting)
-{
+    settingswindow = new  SettingsWindow(this);
+    settingswindow->setModal(true);
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)),  settingswindow,SLOT(receiveBaza(QSqlDatabase)));
+    emit sendBaza(Baza.db);
     this->hide();
-    settingswindow.exec();
-    setting=true;
-
-
+    settingswindow->exec();
     this->show();
-  /*  if(settingswindow.baza)  { ui->statusBazy->setText("Połączono");
-        ui->statusBazy->setStyleSheet("color:green");}
-    else   { ui->statusBazy->setText("Brak połączenia");
-        ui->statusBazy->setStyleSheet("color:red");}*/
-}
-else
-{
-    this->hide();
-    settingswindow.show();
-    setting=true;
-    this->show();
-  /*   if(settingswindow.baza) { ui->statusBazy->setText("Połączono");
-         ui->statusBazy->setStyleSheet("color:green");}
-     else { ui->statusBazy->setText("Brak połączenia");
-     ui->statusBazy->setStyleSheet("color:red");}*/
-}
 }
 
 void MainWindow::on_codeButton_clicked()

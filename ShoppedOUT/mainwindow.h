@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    SettingsWindow settingswindow;
+    SettingsWindow *settingswindow;
     SklepWindow *sklepwindow;
     magazynWindow *magazynwindow;
     bazadanych Baza;
