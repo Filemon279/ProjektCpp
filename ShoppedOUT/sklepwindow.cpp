@@ -52,7 +52,28 @@ BazaIn = Baza;
 
 }
 
+void SklepWindow::receiveItems(QTableWidget *table)
+{
+    int row =table->rowCount();
+    int column = table->columnCount();
 
+    ui->itemsList->setRowCount(row);
+    ui->itemsList->setColumnCount(column);
+
+    for(int i = 0; i<column; i++)
+    {
+        for (int j = 0; j<row;j++)
+        {
+            ui->itemsList->setItem(j,i,new QTableWidgetItem(table->item(j,i)->text()));
+        }
+
+    }
+
+
+
+
+
+}
 
 
 void SklepWindow::on_pushButton_3_clicked()
@@ -60,6 +81,7 @@ void SklepWindow::on_pushButton_3_clicked()
     skanowanie = new Skanowanie(this);
     skanowanie->setModal(true);
     connect(this,SIGNAL(sendBaza(QSqlDatabase)),  skanowanie,SLOT(receiveBaza(QSqlDatabase)));
+    connect(skanowanie,SIGNAL(sendItems(QTableWidget*)), this,SLOT(receiveItems(QTableWidget*)));
     emit sendBaza(BazaIn);
     skanowanie->exec();
 }

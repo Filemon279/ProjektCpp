@@ -13,10 +13,11 @@ class Skanowanie : public QDialog
 {
     Q_OBJECT
 
+signals:
+    void sendItems(QTableWidget*);
 public:
     explicit Skanowanie(QWidget *parent = 0);
     ~Skanowanie();
-    void cos();
 
 private:
     Ui::Skanowanie *ui;
@@ -29,7 +30,8 @@ private:
 
 private slots:
     void receiveBaza(QSqlDatabase Baza);
-      void on_zaplac_button_clicked();
+      void on_zaplacButton_clicked();
+      void on_pushButton_2_clicked();
 };
 
 

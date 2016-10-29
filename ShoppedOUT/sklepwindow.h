@@ -27,6 +27,7 @@ private slots:
     void on_SklepWindow_finished(int result);
     void receiveBaza(QSqlDatabase Baza);
     void on_pushButton_3_clicked();
+    void receiveItems(QTableWidget *table);
 
 private:
     Ui::SklepWindow *ui;

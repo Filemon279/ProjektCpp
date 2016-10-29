@@ -16,6 +16,7 @@ Skanowanie::Skanowanie(QWidget *parent) :
      ui->Zeskanowane->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 
+
 }
 
 Skanowanie::~Skanowanie()
@@ -25,88 +26,103 @@ Skanowanie::~Skanowanie()
 }
 
 
-
 void Skanowanie::keyPressEvent(QKeyEvent* e)
 {
-    ui->productKey->setText(ui->productKey->text()+e->key());
+    if( (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return))
+    {
 
-    polecenie="SELECT `Nazwa`, `Cena_Netto`, `Cena_Brutto`, `Kod_Kreskowy` FROM `asortyment` WHERE Kod_Kreskowy LIKE \"%";
-    polecenie.append(ui->productKey->text());
-    polecenie.append("%\"");
-
-    ui->panel->append(polecenie);
-
-  QSqlQuery query(polecenie);
-  if(query.size()==1)
-  { ui->label->setText("GRA");
+        polecenie="SELECT `Nazwa`, `Cena_Netto`, `Cena_Brutto`, `Kod_Kreskowy` FROM `asortyment` WHERE Kod_Kreskowy LIKE \"%";
+        polecenie.append(ui->productKey->text());
+        polecenie.append("%\"");
 
 
-      int rows = ui->Zeskanowane->rowCount();
-      bool found = false;
-     for(int i = 0; i < rows; ++i)
-      {
-          if(ui->Zeskanowane->item(i, 3)->text().contains(ui->productKey->text()))
+        ui->panel->append(polecenie);
+
+      QSqlQuery query(polecenie);
+
+      if(query.size()==1)
+      { ui->label->setText("GRA");
+
+
+          int rows = ui->Zeskanowane->rowCount();
+          bool found = false;
+          if(ui->Zeskanowane->rowCount()>0)
           {
-            /*   int k = ui->Zeskanowane->item(i, 4)->text().toInt();
-              k++;
-              ui->Zeskanowane->item(i, 4)->setText(QString::number(k));*/
-              found = true;
-              break;
+         for(int i = 0; i < rows; ++i)
+          {
+              if(ui->Zeskanowane->item(i, 3)->text().contains(ui->productKey->text()))
+             {
+                  int k = ui->Zeskanowane->item(i, 4)->text().toInt();
+                  k++;
+                  ui->Zeskanowane->item(i, 4)->setText(QString::number(k));
+                 found = true;
+                  break;
+              }
           }
-      }
-      if(!found)
-      {
+          }
+          if(!found)
+          {
+        ilosc++;
+        ui->Zeskanowane->setRowCount(ilosc);
 
-
-
-
-    ilosc++;
-
-
-
-      ui->Zeskanowane->setRowCount(ilosc);
-
-
-
-      for(int i=0; i<query.record().count();i++)
-      {
-          QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i));
-
-
-           ui->Zeskanowane->setHorizontalHeaderItem(i, newItem);     // naglowki
-
-      }
-
-      QTableWidgetItem *newItem = new QTableWidgetItem("Sztuki");
-       ui->Zeskanowane->setHorizontalHeaderItem(4, newItem);
-
-      while (query.next())
-      {
-          for(int i=0; i<query.record().count();i++)
+        for(int i=0; i<query.record().count();i++)
           {
 
-              ui->Zeskanowane->setItem(index,i,new QTableWidgetItem(query.value(i).toString()));
+              QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i));
+                 newItem->setFlags( Qt::ItemIsSelectable |  Qt::ItemIsEnabled );
+              ui->Zeskanowane->setHorizontalHeaderItem(i, newItem);
+
+
 
           }
- ui->Zeskanowane->setItem(index,query.record().count(),new QTableWidgetItem("1"));
-      index++;
+
+          QTableWidgetItem *newItem = new QTableWidgetItem("Sztuk");
+           ui->Zeskanowane->setHorizontalHeaderItem(4, newItem);
+
+          while (query.next())
+          {
+              for(int i=0; i<query.record().count();i++)
+              {
+
+                  ui->Zeskanowane->setItem(index,i,new QTableWidgetItem(query.value(i).toString()));
+
+              }
+     ui->Zeskanowane->setItem(index,query.record().count(),new QTableWidgetItem("1"));
+          index++;
+          }
+    }
+
+
       }
+      else if(query.size()==0)
+      {
+       ui->label->setText("NIE GRA");
+       ui->productKey->setText("");
+      }
+       ui->productKey->setText("");
+
+    }
 
 
 
-}
-        ui->productKey->setText("");
-
-  }
-
-
-  else if(query.size()==0){ ui->label->setText("NIE GRA");
-    ui->productKey->setText("");
-}
 
 
 
-  ui->Zeskanowane->resizeColumnsToContents();
+    else
+    {
+         ui->productKey->setText(ui->productKey->text()+e->key());
+    }
+
+
+
+
+
+
+
+
+
+
+ui->Zeskanowane->resizeColumnsToContents();
 }
 
 
@@ -141,19 +157,23 @@ void Skanowanie::delay()
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
-void Skanowanie::on_zaplac_button_clicked()
+void Skanowanie::on_zaplacButton_clicked()
 {
+
+    emit sendItems(ui->Zeskanowane);
+}
+
+void Skanowanie::on_pushButton_2_clicked()
+{
+
+    for(int i = 0;i<5;i++)
+    {
+     ui->Zeskanowane->item(ui->Zeskanowane->currentRow(), i)->setText(" ");
+    }
+  ui->productKey->setFocus();
 
 }
 
-
-
-
-
-void Skanowanie::cos()
-{
-    ui->label->setText("Dupa");
-}
 
 
 

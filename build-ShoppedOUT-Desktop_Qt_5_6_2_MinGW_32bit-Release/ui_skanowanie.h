@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Skanowanie
 {
 public:
-    QPushButton *zaplac_button;
+    QPushButton *zaplacButton;
     QTableWidget *Zeskanowane;
     QLabel *label;
     QLabel *label_suma;
@@ -44,12 +44,25 @@ public:
 "}\n"
 "\n"
 ""));
-        zaplac_button = new QPushButton(Skanowanie);
-        zaplac_button->setObjectName(QStringLiteral("zaplac_button"));
-        zaplac_button->setGeometry(QRect(270, 460, 181, 41));
+        zaplacButton = new QPushButton(Skanowanie);
+        zaplacButton->setObjectName(QStringLiteral("zaplacButton"));
+        zaplacButton->setGeometry(QRect(270, 460, 181, 41));
+        zaplacButton->setAutoDefault(false);
         Zeskanowane = new QTableWidget(Skanowanie);
         Zeskanowane->setObjectName(QStringLiteral("Zeskanowane"));
+        Zeskanowane->setEnabled(true);
         Zeskanowane->setGeometry(QRect(10, 120, 691, 251));
+        Zeskanowane->setSelectionMode(QAbstractItemView::SingleSelection);
+        Zeskanowane->setSelectionBehavior(QAbstractItemView::SelectRows);
+        Zeskanowane->setTextElideMode(Qt::ElideMiddle);
+        Zeskanowane->setGridStyle(Qt::SolidLine);
+        Zeskanowane->setRowCount(0);
+        Zeskanowane->setColumnCount(0);
+        Zeskanowane->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        Zeskanowane->horizontalHeader()->setStretchLastSection(false);
+        Zeskanowane->verticalHeader()->setCascadingSectionResizes(false);
+        Zeskanowane->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        Zeskanowane->verticalHeader()->setStretchLastSection(false);
         label = new QLabel(Skanowanie);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(530, 430, 51, 16));
@@ -78,15 +91,16 @@ public:
         pushButton_2->setGeometry(QRect(10, 420, 101, 23));
         productKey = new QLineEdit(Skanowanie);
         productKey->setObjectName(QStringLiteral("productKey"));
-        productKey->setEnabled(false);
+        productKey->setEnabled(true);
         productKey->setGeometry(QRect(560, 100, 141, 20));
+        productKey->setReadOnly(true);
         panel = new QTextEdit(Skanowanie);
         panel->setObjectName(QStringLiteral("panel"));
         panel->setGeometry(QRect(10, 380, 691, 41));
 
         retranslateUi(Skanowanie);
 
-        zaplac_button->setDefault(true);
+        zaplacButton->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(Skanowanie);
@@ -95,7 +109,7 @@ public:
     void retranslateUi(QDialog *Skanowanie)
     {
         Skanowanie->setWindowTitle(QApplication::translate("Skanowanie", "Dialog", 0));
-        zaplac_button->setText(QApplication::translate("Skanowanie", "Zap\305\202a\304\207", 0));
+        zaplacButton->setText(QApplication::translate("Skanowanie", "Zap\305\202a\304\207", 0));
         label->setStyleSheet(QApplication::translate("Skanowanie", "color:white", 0));
         label->setText(QApplication::translate("Skanowanie", "SUMA:", 0));
         label_suma->setText(QApplication::translate("Skanowanie", "12.13 z\305\202", 0));

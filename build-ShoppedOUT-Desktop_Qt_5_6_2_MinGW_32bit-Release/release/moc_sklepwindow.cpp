@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SklepWindow_t {
-    QByteArrayData data[9];
-    char stringdata0[107];
+    QByteArrayData data[12];
+    char stringdata0[140];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,12 +37,16 @@ QT_MOC_LITERAL(4, 35, 23), // "on_SklepWindow_finished"
 QT_MOC_LITERAL(5, 59, 6), // "result"
 QT_MOC_LITERAL(6, 66, 11), // "receiveBaza"
 QT_MOC_LITERAL(7, 78, 4), // "Baza"
-QT_MOC_LITERAL(8, 83, 23) // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(8, 83, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(9, 107, 12), // "receiveItems"
+QT_MOC_LITERAL(10, 120, 13), // "QTableWidget*"
+QT_MOC_LITERAL(11, 134, 5) // "table"
 
     },
     "SklepWindow\0sendBaza\0\0QSqlDatabase\0"
     "on_SklepWindow_finished\0result\0"
-    "receiveBaza\0Baza\0on_pushButton_3_clicked"
+    "receiveBaza\0Baza\0on_pushButton_3_clicked\0"
+    "receiveItems\0QTableWidget*\0table"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +56,7 @@ static const uint qt_meta_data_SklepWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,12 +64,13 @@ static const uint qt_meta_data_SklepWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x06 /* Public */,
+       1,    1,   39,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   37,    2, 0x08 /* Private */,
-       6,    1,   40,    2, 0x08 /* Private */,
-       8,    0,   43,    2, 0x08 /* Private */,
+       4,    1,   42,    2, 0x08 /* Private */,
+       6,    1,   45,    2, 0x08 /* Private */,
+       8,    0,   48,    2, 0x08 /* Private */,
+       9,    1,   49,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -74,6 +79,7 @@ static const uint qt_meta_data_SklepWindow[] = {
     QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void, 0x80000000 | 3,    7,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 10,   11,
 
        0        // eod
 };
@@ -88,7 +94,19 @@ void SklepWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 1: _t->on_SklepWindow_finished((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->receiveBaza((*reinterpret_cast< QSqlDatabase(*)>(_a[1]))); break;
         case 3: _t->on_pushButton_3_clicked(); break;
+        case 4: _t->receiveItems((*reinterpret_cast< QTableWidget*(*)>(_a[1]))); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 4:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QTableWidget* >(); break;
+            }
+            break;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
@@ -128,13 +146,13 @@ int SklepWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        if (_id < 5)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 5;
     }
     return _id;
 }
