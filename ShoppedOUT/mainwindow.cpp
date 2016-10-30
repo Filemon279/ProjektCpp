@@ -76,3 +76,12 @@ void MainWindow::on_codeButton_clicked()
     kodywin.exec();
     this->show();
 }
+
+void MainWindow::on_zakupyButton_clicked()
+{
+    zakupy = new  Zakupy(this);
+    zakupy->setModal(true);
+    zakupy->showFullScreen();
+    zakupy->exec();
+
+}

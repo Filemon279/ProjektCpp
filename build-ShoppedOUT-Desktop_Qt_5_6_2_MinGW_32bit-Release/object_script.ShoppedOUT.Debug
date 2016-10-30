@@ -7,6 +7,7 @@ INPUT(
 ./debug\settingswindow.o
 ./debug\bazadanych.o
 ./debug\skanowanie.o
+./debug\zakupy.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_sklepwindow.o
@@ -14,4 +15,5 @@ INPUT(
 ./debug\moc_kodywindow.o
 ./debug\moc_settingswindow.o
 ./debug\moc_skanowanie.o
+./debug\moc_zakupy.o
 );

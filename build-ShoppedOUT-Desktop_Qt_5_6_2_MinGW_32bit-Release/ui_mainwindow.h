@@ -33,6 +33,7 @@ public:
     QPushButton *magazynButton;
     QTextEdit *adminText;
     QLabel *statusBazy;
+    QPushButton *zakupyButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -138,6 +139,9 @@ public:
         statusBazy->setFont(font);
         statusBazy->setStyleSheet(QLatin1String("color:green\n"
 ""));
+        zakupyButton = new QPushButton(MainWidget);
+        zakupyButton->setObjectName(QStringLiteral("zakupyButton"));
+        zakupyButton->setGeometry(QRect(10, 580, 141, 41));
         MainWindow->setCentralWidget(MainWidget);
 
         retranslateUi(MainWindow);
@@ -157,6 +161,7 @@ public:
         settingButton->setText(QApplication::translate("MainWindow", "USTAWIENIA", 0));
         magazynButton->setText(QApplication::translate("MainWindow", "MAGAZYN", 0));
         statusBazy->setText(QString());
+        zakupyButton->setText(QApplication::translate("MainWindow", "TEST - ZAKUPY", 0));
     } // retranslateUi
 
 };

@@ -6,6 +6,7 @@
 #include "bazadanych.h"
 #include "sklepwindow.h"
 #include "magazynwindow.h"
+#include "zakupy.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,7 @@ public:
     SettingsWindow *settingswindow;
     SklepWindow *sklepwindow;
     magazynWindow *magazynwindow;
+    Zakupy *zakupy;
     bazadanych Baza;
 
 signals:
@@ -36,6 +38,8 @@ private slots:
     void on_settingButton_clicked();
 
     void on_codeButton_clicked();
+
+    void on_zakupyButton_clicked();
 
 private:
     Ui::MainWindow *ui;

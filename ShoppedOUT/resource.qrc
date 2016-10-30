@@ -15,6 +15,9 @@
         <file>Img/ustawienia.png</file>
         <file>Img/warehouse_clicked.png</file>
         <file>Img/warehouse.png</file>
+        <file>Img/black.png</file>
+        <file>Img/white.png</file>
+        <file>Img/white_40_big.png</file>
+        <file>Img/white_40_small.png</file>
     </qresource>
-
 </RCC>
