@@ -33,15 +33,18 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
+    QLabel *label_info;
     QTableWidget *zakubyTable;
     QWidget *widget;
     QGridLayout *gridLayout_2;
-    QLabel *label;
-    QLabel *label_5;
     QLabel *label_4;
     QLabel *label_6;
+    QLabel *label;
+    QLabel *label_5;
+    QLabel *label_Brutto;
+    QLabel *label_netto;
+    QLabel *label_7;
     QLabel *label_2;
-    QLabel *label_3;
     QHBoxLayout *horizontalLayout_2;
     QTabWidget *tabWidget;
     QWidget *main_tab;
@@ -77,7 +80,7 @@ public:
             Zakupy->setObjectName(QStringLiteral("Zakupy"));
         Zakupy->resize(1156, 648);
         Zakupy->setLayoutDirection(Qt::LeftToRight);
-        Zakupy->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));"));
+        Zakupy->setStyleSheet(QStringLiteral("#Zakupy {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}"));
         verticalLayout = new QVBoxLayout(Zakupy);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -85,7 +88,19 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 70, 20, 50);
+        verticalLayout_2->setContentsMargins(0, 40, 20, 50);
+        label_info = new QLabel(Zakupy);
+        label_info->setObjectName(QStringLiteral("label_info"));
+        QFont font;
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        label_info->setFont(font);
+        label_info->setStyleSheet(QStringLiteral("color: white"));
+
+        verticalLayout_2->addWidget(label_info);
+
         zakubyTable = new QTableWidget(Zakupy);
         zakubyTable->setObjectName(QStringLiteral("zakubyTable"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
@@ -93,13 +108,28 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(zakubyTable->sizePolicy().hasHeightForWidth());
         zakubyTable->setSizePolicy(sizePolicy);
-        zakubyTable->setStyleSheet(QLatin1String("background-image: url(:/img/Img/white_40_small.png);\n"
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(18);
+        font1.setBold(false);
+        font1.setWeight(50);
+        zakubyTable->setFont(font1);
+        zakubyTable->setStyleSheet(QLatin1String("gridline-color: white; \n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
+"background-image: url(:/img/Img/white_40_small.png);\n"
 " background-repeat: no-repeat;\n"
 " background-position: center;\n"
 "background-opacity: 153;\n"
+"gridline-color:white;\n"
+"color:white\n"
+"\n"
+"\n"
+"\n"
 "\n"
 "\n"
 ""));
+        zakubyTable->setRowCount(0);
+        zakubyTable->setColumnCount(0);
 
         verticalLayout_2->addWidget(zakubyTable);
 
@@ -109,6 +139,16 @@ public:
         widget->setStyleSheet(QStringLiteral("background-color: rgb(0, 98, 255);"));
         gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        label_4 = new QLabel(widget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        gridLayout_2->addWidget(label_4, 1, 1, 1, 1);
+
+        label_6 = new QLabel(widget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+
+        gridLayout_2->addWidget(label_6, 0, 0, 1, 1);
+
         label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -127,54 +167,65 @@ public:
 
         gridLayout_2->addWidget(label_5, 2, 0, 1, 1);
 
-        label_4 = new QLabel(widget);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_Brutto = new QLabel(widget);
+        label_Brutto->setObjectName(QStringLiteral("label_Brutto"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_Brutto->sizePolicy().hasHeightForWidth());
+        label_Brutto->setSizePolicy(sizePolicy2);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(22);
+        font2.setBold(true);
+        font2.setWeight(75);
+        label_Brutto->setFont(font2);
+        label_Brutto->setLayoutDirection(Qt::LeftToRight);
+        label_Brutto->setStyleSheet(QLatin1String("color:white\n"
+""));
+        label_Brutto->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_2->addWidget(label_4, 1, 1, 1, 1);
+        gridLayout_2->addWidget(label_Brutto, 0, 3, 3, 1);
 
-        label_6 = new QLabel(widget);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        label_netto = new QLabel(widget);
+        label_netto->setObjectName(QStringLiteral("label_netto"));
+        label_netto->setFont(font);
+        label_netto->setStyleSheet(QLatin1String("color:white\n"
+""));
+        label_netto->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_2->addWidget(label_6, 0, 0, 1, 1);
+        gridLayout_2->addWidget(label_netto, 3, 3, 1, 1);
+
+        label_7 = new QLabel(widget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(11);
+        font3.setBold(false);
+        font3.setWeight(50);
+        label_7->setFont(font3);
+        label_7->setStyleSheet(QStringLiteral("color:white"));
+
+        gridLayout_2->addWidget(label_7, 3, 2, 1, 1);
 
         label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Minimum);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy3);
         label_2->setMinimumSize(QSize(20, 0));
-        QFont font;
-        font.setFamily(QStringLiteral("Arial"));
-        font.setPointSize(14);
-        font.setBold(true);
-        font.setWeight(75);
-        label_2->setFont(font);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(14);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_2->setFont(font4);
         label_2->setStyleSheet(QLatin1String("color:white\n"
 ""));
 
         gridLayout_2->addWidget(label_2, 0, 2, 3, 1);
-
-        label_3 = new QLabel(widget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Preferred);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
-        label_3->setSizePolicy(sizePolicy3);
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(22);
-        font1.setBold(true);
-        font1.setWeight(75);
-        label_3->setFont(font1);
-        label_3->setLayoutDirection(Qt::LeftToRight);
-        label_3->setStyleSheet(QLatin1String("color:white\n"
-""));
-        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(label_3, 0, 3, 3, 1);
 
 
         verticalLayout_2->addWidget(widget);
@@ -189,7 +240,12 @@ public:
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         sizePolicy.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
         tabWidget->setSizePolicy(sizePolicy);
-        tabWidget->setStyleSheet(QStringLiteral("QTabBar::tab { height: 70px; width: 120px; }"));
+        tabWidget->setStyleSheet(QLatin1String("\n"
+"QTabBar::tab {height: 70px; width: 120px};\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
+"\n"
+"\n"
+""));
         tabWidget->setTabPosition(QTabWidget::South);
         tabWidget->setTabShape(QTabWidget::Rounded);
         tabWidget->setIconSize(QSize(64, 64));
@@ -211,9 +267,8 @@ public:
         pushButton_nr7->setSizePolicy(sizePolicy4);
         pushButton_nr7->setMinimumSize(QSize(0, 70));
         pushButton_nr7->setBaseSize(QSize(0, 0));
-        pushButton_nr7->setFont(font);
-        pushButton_nr7->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
-"\n"
+        pushButton_nr7->setFont(font4);
+        pushButton_nr7->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color: white\n"
 ""));
 
@@ -225,9 +280,10 @@ public:
         pushButton_nr8->setSizePolicy(sizePolicy4);
         pushButton_nr8->setMinimumSize(QSize(0, 70));
         pushButton_nr8->setBaseSize(QSize(0, 0));
-        pushButton_nr8->setFont(font);
-        pushButton_nr8->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
-"color:white;"));
+        pushButton_nr8->setFont(font4);
+        pushButton_nr8->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
+"color: white\n"
+""));
 
         gridLayout->addWidget(pushButton_nr8, 1, 1, 1, 1);
 
@@ -237,7 +293,7 @@ public:
         pushButton_escape->setSizePolicy(sizePolicy4);
         pushButton_escape->setMinimumSize(QSize(0, 70));
         pushButton_escape->setBaseSize(QSize(0, 0));
-        pushButton_escape->setFont(font);
+        pushButton_escape->setFont(font4);
         pushButton_escape->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color: white\n"
 ""));
@@ -250,9 +306,10 @@ public:
         pushButton_nr9->setSizePolicy(sizePolicy4);
         pushButton_nr9->setMinimumSize(QSize(0, 70));
         pushButton_nr9->setBaseSize(QSize(0, 0));
-        pushButton_nr9->setFont(font);
-        pushButton_nr9->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
-"color:white;"));
+        pushButton_nr9->setFont(font4);
+        pushButton_nr9->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
+"color: white\n"
+""));
 
         gridLayout->addWidget(pushButton_nr9, 1, 2, 1, 1);
 
@@ -262,8 +319,8 @@ public:
         pushButton_nr0->setSizePolicy(sizePolicy4);
         pushButton_nr0->setMinimumSize(QSize(0, 70));
         pushButton_nr0->setBaseSize(QSize(0, 0));
-        pushButton_nr0->setFont(font);
-        pushButton_nr0->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr0->setFont(font4);
+        pushButton_nr0->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr0, 4, 0, 1, 1);
@@ -274,7 +331,7 @@ public:
         pushButton_down->setSizePolicy(sizePolicy4);
         pushButton_down->setMinimumSize(QSize(0, 70));
         pushButton_down->setBaseSize(QSize(0, 0));
-        pushButton_down->setFont(font);
+        pushButton_down->setFont(font4);
         pushButton_down->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));\n"
 "color:white;"));
 
@@ -286,7 +343,7 @@ public:
         pushButton_up->setSizePolicy(sizePolicy4);
         pushButton_up->setMinimumSize(QSize(0, 70));
         pushButton_up->setBaseSize(QSize(0, 0));
-        pushButton_up->setFont(font);
+        pushButton_up->setFont(font4);
         pushButton_up->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));\n"
 "color:white;"));
 
@@ -298,8 +355,8 @@ public:
         pushButton_nr1->setSizePolicy(sizePolicy4);
         pushButton_nr1->setMinimumSize(QSize(0, 70));
         pushButton_nr1->setBaseSize(QSize(0, 0));
-        pushButton_nr1->setFont(font);
-        pushButton_nr1->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr1->setFont(font4);
+        pushButton_nr1->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr1, 3, 0, 1, 1);
@@ -310,8 +367,8 @@ public:
         pushButton_nr3->setSizePolicy(sizePolicy4);
         pushButton_nr3->setMinimumSize(QSize(0, 70));
         pushButton_nr3->setBaseSize(QSize(0, 0));
-        pushButton_nr3->setFont(font);
-        pushButton_nr3->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr3->setFont(font4);
+        pushButton_nr3->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr3, 3, 2, 1, 1);
@@ -322,8 +379,8 @@ public:
         pushButton_nr2->setSizePolicy(sizePolicy4);
         pushButton_nr2->setMinimumSize(QSize(0, 70));
         pushButton_nr2->setBaseSize(QSize(0, 0));
-        pushButton_nr2->setFont(font);
-        pushButton_nr2->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr2->setFont(font4);
+        pushButton_nr2->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr2, 3, 1, 1, 1);
@@ -334,8 +391,8 @@ public:
         pushButton_nr5->setSizePolicy(sizePolicy4);
         pushButton_nr5->setMinimumSize(QSize(0, 70));
         pushButton_nr5->setBaseSize(QSize(0, 0));
-        pushButton_nr5->setFont(font);
-        pushButton_nr5->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr5->setFont(font4);
+        pushButton_nr5->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr5, 2, 1, 1, 1);
@@ -346,7 +403,7 @@ public:
         pushButton_delete->setSizePolicy(sizePolicy4);
         pushButton_delete->setMinimumSize(QSize(0, 70));
         pushButton_delete->setBaseSize(QSize(0, 0));
-        pushButton_delete->setFont(font);
+        pushButton_delete->setFont(font4);
         pushButton_delete->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -358,8 +415,8 @@ public:
         pushButton_nr6->setSizePolicy(sizePolicy4);
         pushButton_nr6->setMinimumSize(QSize(0, 70));
         pushButton_nr6->setBaseSize(QSize(0, 0));
-        pushButton_nr6->setFont(font);
-        pushButton_nr6->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr6->setFont(font4);
+        pushButton_nr6->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr6, 2, 2, 1, 1);
@@ -370,7 +427,7 @@ public:
         pushButton_clear->setSizePolicy(sizePolicy4);
         pushButton_clear->setMinimumSize(QSize(0, 70));
         pushButton_clear->setBaseSize(QSize(0, 0));
-        pushButton_clear->setFont(font);
+        pushButton_clear->setFont(font4);
         pushButton_clear->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -382,8 +439,8 @@ public:
         pushButton_nr4->setSizePolicy(sizePolicy4);
         pushButton_nr4->setMinimumSize(QSize(0, 70));
         pushButton_nr4->setBaseSize(QSize(0, 0));
-        pushButton_nr4->setFont(font);
-        pushButton_nr4->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr4->setFont(font4);
+        pushButton_nr4->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr4, 2, 0, 1, 1);
@@ -394,8 +451,8 @@ public:
         pushButton_nr00->setSizePolicy(sizePolicy4);
         pushButton_nr00->setMinimumSize(QSize(0, 70));
         pushButton_nr00->setBaseSize(QSize(0, 0));
-        pushButton_nr00->setFont(font);
-        pushButton_nr00->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_nr00->setFont(font4);
+        pushButton_nr00->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_nr00, 4, 1, 1, 1);
@@ -403,12 +460,12 @@ public:
         codeNumber = new QLineEdit(main_tab);
         codeNumber->setObjectName(QStringLiteral("codeNumber"));
         codeNumber->setMinimumSize(QSize(0, 80));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(36);
-        font2.setBold(true);
-        font2.setWeight(75);
-        codeNumber->setFont(font2);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Arial"));
+        font5.setPointSize(36);
+        font5.setBold(true);
+        font5.setWeight(75);
+        codeNumber->setFont(font5);
         codeNumber->setStyleSheet(QStringLiteral("color:white"));
         codeNumber->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhFormattedNumbersOnly);
         codeNumber->setMaxLength(20);
@@ -421,7 +478,7 @@ public:
         pushButton_cena->setSizePolicy(sizePolicy4);
         pushButton_cena->setMinimumSize(QSize(0, 70));
         pushButton_cena->setBaseSize(QSize(0, 0));
-        pushButton_cena->setFont(font);
+        pushButton_cena->setFont(font4);
         pushButton_cena->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(44, 43, 156, 255), stop:1 rgba(138, 147, 255, 255));\n"
 "color:white;"));
 
@@ -433,8 +490,8 @@ public:
         pushButton_przecinek->setSizePolicy(sizePolicy4);
         pushButton_przecinek->setMinimumSize(QSize(0, 70));
         pushButton_przecinek->setBaseSize(QSize(0, 0));
-        pushButton_przecinek->setFont(font);
-        pushButton_przecinek->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(38, 45, 133, 255), stop:0.994318 rgba(0, 0, 0, 255));\n"
+        pushButton_przecinek->setFont(font4);
+        pushButton_przecinek->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
         gridLayout->addWidget(pushButton_przecinek, 4, 2, 1, 1);
@@ -445,7 +502,7 @@ public:
         pushButton_zaplac->setSizePolicy(sizePolicy4);
         pushButton_zaplac->setMinimumSize(QSize(0, 70));
         pushButton_zaplac->setBaseSize(QSize(0, 0));
-        pushButton_zaplac->setFont(font);
+        pushButton_zaplac->setFont(font4);
         pushButton_zaplac->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));\n"
 "color:white;"));
 
@@ -457,7 +514,7 @@ public:
         pushButton_enter->setSizePolicy(sizePolicy4);
         pushButton_enter->setMinimumSize(QSize(0, 70));
         pushButton_enter->setBaseSize(QSize(0, 0));
-        pushButton_enter->setFont(font);
+        pushButton_enter->setFont(font4);
         pushButton_enter->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(44, 43, 156, 255), stop:1 rgba(138, 147, 255, 255));\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(35, 34, 126, 255), stop:1 rgba(95, 106, 255, 255));\n"
 "color:white;"));
@@ -470,7 +527,7 @@ public:
         pushButton_ilosc->setSizePolicy(sizePolicy4);
         pushButton_ilosc->setMinimumSize(QSize(0, 70));
         pushButton_ilosc->setBaseSize(QSize(0, 0));
-        pushButton_ilosc->setFont(font);
+        pushButton_ilosc->setFont(font4);
         pushButton_ilosc->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -503,12 +560,15 @@ public:
     void retranslateUi(QDialog *Zakupy)
     {
         Zakupy->setWindowTitle(QApplication::translate("Zakupy", "ShoppedOUT - Zakupy", 0));
-        label->setText(QString());
-        label_5->setText(QString());
+        label_info->setText(QString());
         label_4->setText(QString());
         label_6->setText(QString());
+        label->setText(QString());
+        label_5->setText(QString());
+        label_Brutto->setText(QApplication::translate("Zakupy", "0.00z\305\202", 0));
+        label_netto->setText(QApplication::translate("Zakupy", "0.00z\305\202", 0));
+        label_7->setText(QApplication::translate("Zakupy", "Cena Netto:", 0));
         label_2->setText(QApplication::translate("Zakupy", "Cena:", 0));
-        label_3->setText(QApplication::translate("Zakupy", "0.00z\305\202", 0));
         pushButton_nr7->setText(QApplication::translate("Zakupy", "7", 0));
         pushButton_nr8->setText(QApplication::translate("Zakupy", "8", 0));
         pushButton_escape->setText(QApplication::translate("Zakupy", "[ESC]", 0));

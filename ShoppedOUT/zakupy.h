@@ -2,6 +2,8 @@
 #define ZAKUPY_H
 
 #include <QDialog>
+#include "bazadanych.h"
+#include <QKeyEvent>
 
 namespace Ui {
 class Zakupy;
@@ -11,11 +13,15 @@ class Zakupy : public QDialog
 {
     Q_OBJECT
 
+
+
 public:
     explicit Zakupy(QWidget *parent = 0);
     ~Zakupy();
 
 private slots:
+    void receiveBaza(QSqlDatabase Baza);
+
     void on_pushButton_nr7_clicked();
 
     void on_pushButton_nr8_clicked();
@@ -44,8 +50,17 @@ private slots:
 
     void on_pushButton_delete_clicked();
 
+    void on_zakubyTable_clicked(const QModelIndex &index);
+
+    void on_pushButton_enter_clicked();
+
 private:
     Ui::Zakupy *ui;
+    void keyPressEvent( QKeyEvent *e);
+    QString polecenie;
+    int ilosc = 0;
+    int index=0 ;
+    void enterAction();
 };
 
 #endif // ZAKUPY_H

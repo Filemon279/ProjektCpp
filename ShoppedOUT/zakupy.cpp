@@ -6,6 +6,16 @@ Zakupy::Zakupy(QWidget *parent) :
     ui(new Ui::Zakupy)
 {
     ui->setupUi(this);
+    ui->zakubyTable->setColumnCount(5);
+    ui->zakubyTable->horizontalHeader()->setStretchLastSection(true);
+ //   ui->zakubyTable->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255)); background-image: url(:/img/Img/white_40_small.png);background-repeat: no-repeat;background-position: center;background-opacity: 153;gridline-color:white" );
+    ui->zakubyTable->verticalHeader()->setStyleSheet("color: black; border: 1px solid;");
+    ui->zakubyTable->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
+    ui->zakubyTable->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->zakubyTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+
+            ui->codeNumber->setFocus();
 }
 
 Zakupy::~Zakupy()
@@ -13,12 +23,87 @@ Zakupy::~Zakupy()
     delete ui;
 }
 
+
+
+
+
+
+
+void Zakupy::keyPressEvent(QKeyEvent* e)
+{
+    ui->zakubyTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+
+     if(e->key() == Qt::Key_Escape)
+     {
+        this->close();
+    }
+
+    else if( (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return))
+    {
+        enterAction();
+    }
+
+    else
+    {
+         ui->codeNumber->setText(ui->codeNumber->text()+e->key());
+    }
+
+
+ui->zakubyTable->horizontalHeader()->setStretchLastSection(true);
+}
+
+
+
+void Zakupy::receiveBaza(QSqlDatabase Baza)
+{
+
+    if (!Baza.isOpen()) {
+        if(!Baza.open())
+        {
+        ui->label_info->setText("Błąd połączenia: \n"+Baza.lastError().text());
+        ui->label_info->setStyleSheet("color:red");
+        }
+        else
+        {
+             ui->label_info->setText("Połączono");
+             ui->label_info->setStyleSheet("color:green");
+        }
+    }
+    else
+    {
+         ui->label_info->setText("Połączono");
+         ui->label_info->setStyleSheet("color:green");
+
+    }
+    ui->codeNumber->setFocus();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void Zakupy::on_pushButton_nr7_clicked()
 {
     QString tekst="";
     tekst.append(ui->codeNumber->text());
     tekst.append("7");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr8_clicked()
@@ -27,6 +112,7 @@ void Zakupy::on_pushButton_nr8_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("8");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr5_clicked()
@@ -35,6 +121,7 @@ void Zakupy::on_pushButton_nr5_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("5");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr9_clicked()
@@ -43,6 +130,7 @@ void Zakupy::on_pushButton_nr9_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("9");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr4_clicked()
@@ -51,6 +139,7 @@ void Zakupy::on_pushButton_nr4_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("4");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr6_clicked()
@@ -59,6 +148,7 @@ void Zakupy::on_pushButton_nr6_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("6");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr1_clicked()
@@ -67,6 +157,7 @@ void Zakupy::on_pushButton_nr1_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("1");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr2_clicked()
@@ -75,6 +166,7 @@ void Zakupy::on_pushButton_nr2_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("2");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr3_clicked()
@@ -83,6 +175,7 @@ void Zakupy::on_pushButton_nr3_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("3");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr0_clicked()
@@ -91,6 +184,7 @@ void Zakupy::on_pushButton_nr0_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("0");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_nr00_clicked()
@@ -99,6 +193,7 @@ void Zakupy::on_pushButton_nr00_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append("00");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_przecinek_clicked()
@@ -107,6 +202,7 @@ void Zakupy::on_pushButton_przecinek_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.append(",");
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_clear_clicked()
@@ -115,10 +211,132 @@ void Zakupy::on_pushButton_clear_clicked()
     tekst.append(ui->codeNumber->text());
     tekst.chop(1);
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
 }
 
 void Zakupy::on_pushButton_delete_clicked()
 {
     QString tekst="";
     ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
+}
+
+void Zakupy::on_zakubyTable_clicked(const QModelIndex &index)
+{
+     ui->codeNumber->setFocus();
+}
+
+void Zakupy::on_pushButton_enter_clicked()
+{
+    enterAction();
+}
+
+
+void Zakupy::enterAction()
+{
+    polecenie="SELECT `Nazwa`, `Cena_Netto`, `Cena_Brutto`, `Kod_Kreskowy` FROM `asortyment` WHERE Kod_Kreskowy = \"";
+    polecenie.append(ui->codeNumber->text());
+    polecenie.append("\"");
+    QSqlQuery query(polecenie);
+
+    for(int i=0;i<5;i++)
+    {
+        ui->zakubyTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+    }
+
+  if(query.size()==1)
+  {
+
+
+      int rows = ui->zakubyTable->rowCount();
+      bool found = false;
+      if(ui->zakubyTable->rowCount()>0)
+      {
+     for(int i = 0; i < rows; ++i)
+      {
+
+          if(ui->zakubyTable->item(i, 3)->text().contains(ui->codeNumber->text()))
+         {
+
+              int k = ui->zakubyTable->item(i, 4)->text().toInt();
+              k++;
+              ui->zakubyTable->item(i, 4)->setText(QString::number(k));
+             found = true;
+              break;
+          }
+      }
+
+
+
+
+      }
+      if(!found)
+      {
+    ilosc++;
+    ui->zakubyTable->setRowCount(ilosc);
+
+    for(int i=0; i<query.record().count();i++)
+      {
+
+          QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i));
+             newItem->setFlags( Qt::ItemIsSelectable |  Qt::ItemIsEnabled );
+          ui->zakubyTable->setHorizontalHeaderItem(i, newItem);
+
+
+
+      }
+
+      QTableWidgetItem *newItem = new QTableWidgetItem("Sztuk");
+       ui->zakubyTable->setHorizontalHeaderItem(4, newItem);
+
+      while (query.next())
+      {
+          for(int i=0; i<query.record().count();i++)
+          {
+
+              ui->zakubyTable->setItem(index,i,new QTableWidgetItem(query.value(i).toString()));
+
+          }
+ ui->zakubyTable->setItem(index,query.record().count(),new QTableWidgetItem("1"));
+      index++;
+      }
+
+
+}
+
+
+  }
+  else if(query.size()==0)
+  {
+   //ui->label->setText("NIE GRA");
+   ui->codeNumber->setText("");
+  }
+   ui->codeNumber->setText("");
+
+
+   //Podliczanie cen
+   //1 netto
+   //2 brutto
+    int rows = ui->zakubyTable->rowCount();
+     float suma_netto=0;
+     float suma_brutto=0;
+     for(int i = 0; i < rows; i++)
+      {
+        suma_netto+=ui->zakubyTable->item(i, 1)->text().toFloat()*ui->zakubyTable->item(i, 4)->text().toFloat();
+        suma_brutto+=ui->zakubyTable->item(i, 2)->text().toFloat()*ui->zakubyTable->item(i, 4)->text().toFloat();
+      }
+
+
+     QString str_netto = QString::number( suma_netto, 'f', 2 );
+     QString str_brutto = QString::number( suma_brutto, 'f', 2 );
+     str_netto.append("zł");
+     str_brutto.append("zł");
+       ui->label_Brutto->setText(str_brutto);
+       ui->label_netto->setText(str_netto);
+
+
+   //Koniec podlcizania
+
+
+
 }

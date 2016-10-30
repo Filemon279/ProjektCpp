@@ -81,6 +81,8 @@ void MainWindow::on_zakupyButton_clicked()
 {
     zakupy = new  Zakupy(this);
     zakupy->setModal(true);
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)),  zakupy,SLOT(receiveBaza(QSqlDatabase)));
+    emit sendBaza(Baza.db);
     zakupy->showFullScreen();
     zakupy->exec();
 
