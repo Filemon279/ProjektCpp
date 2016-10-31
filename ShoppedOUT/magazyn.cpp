@@ -1,5 +1,8 @@
 #include "magazyn.h"
 #include "ui_magazyn.h"
+#include <QFontDatabase>
+#include <QMessageBox>
+
 
 Magazyn::Magazyn(QWidget *parent) :
     QDialog(parent),
@@ -13,7 +16,26 @@ Magazyn::Magazyn(QWidget *parent) :
     ui->Asortyment->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->Asortyment->setSelectionBehavior(QAbstractItemView::SelectRows);
 
+    int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
+   // QMessageBox::information(NULL,"Message",QString::number(id));  // this shows id is 0.
 
+    QFont fontAws;
+    fontAws.setFamily("FontAwesome");
+    fontAws.setPointSize(30);
+
+    ui->pushButton_up->setFont(fontAws);
+    ui->pushButton_down->setFont(fontAws);
+    ui->pushButton_add->setFont(fontAws);
+    ui->pushButton_delete->setFont(fontAws);
+    ui->pushButton_refresh->setFont(fontAws);
+    ui->pushButton_save->setFont(fontAws);
+
+    ui->pushButton_up->setText("\uf0aa");
+    ui->pushButton_down->setText("\uf0ab");
+    ui->pushButton_add->setText("\uf067 DODAJ REKORD");
+    ui->pushButton_delete->setText("\uf1f8 USUŃ ZAZNACZONE");
+    ui->pushButton_refresh->setText("\uf021 ODŚWIEŻ BAZĘ");
+    ui->pushButton_save->setText("\uf0c7 ZAPISZ ZMIANY");
 }
 
 Magazyn::~Magazyn()
@@ -31,22 +53,160 @@ void Magazyn::receiveBaza(QSqlDatabase Baza)
         if(!Baza.open())
         {
         ui->label_info->setText("Błąd połączenia: \n"+Baza.lastError().text());
-        ui->label_info->setStyleSheet("color:red");
+        ui->label_info->setStyleSheet("color:red;background-color: rgb(0, 123, 255);");
         }
         else
         {
              ui->label_info->setText("Połączono");
-             ui->label_info->setStyleSheet("color:green");
+             ui->label_info->setStyleSheet("color:green;background-color: rgb(0, 123, 255);");
         }
     }
     else
     {
          ui->label_info->setText("Połączono");
-         ui->label_info->setStyleSheet("color:green");
+         ui->label_info->setStyleSheet("color:green;background-color: rgb(0, 123, 255);");
 
     }
+odswiezBaze();
+
+}
+
+
+void Magazyn::deleteRecord()
+{
+    int row = ui->Asortyment->currentRow();
+
+    QString polecenie;
+    polecenie = "DELETE FROM asortyment WHERE ID=";
+    polecenie.append(ui->Asortyment->verticalHeaderItem(row)->text());
+         QSqlQuery query(polecenie);
+          ui->Asortyment->removeRow(row);
+}
+
+void Magazyn::addRecord()
+{
+    QSqlQuery query("INSERT INTO asortyment() VALUES ()");
+    //ODSWIEZAMY
+          odswiezBaze();
+}
+
+
+void Magazyn::odswiezBaze()
+{
+    QSqlQuery query("SELECT * FROM asortyment");
+
+
+      ui->Asortyment->setColumnCount(Rows=query.record().count()-1); // pomijamy ID, indeksuje nam iterator
+      ui->Asortyment->setRowCount(Columns=query.size());
+
+      int index=0 ;
+      for(int i=0; i<=Rows-1;i++)
+      {
+          QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i+1));
+
+
+           ui->Asortyment->setHorizontalHeaderItem(i, newItem);     // naglowki
+
+      }
+
+      while (query.next())
+      {
+          for(int i=0; i<=Rows-1;i++)
+          {
+
+              ui->Asortyment->setItem(index,i,new QTableWidgetItem(query.value(i+1).toString()));
+
+          }
+              ui->Asortyment->setVerticalHeaderItem(index,new QTableWidgetItem(query.value(0).toString()));     //nr ID
+      index++;
+      }
+
+     //
+ for (int row = 0 ; row < ui->Asortyment->rowCount() ; ++row) {
+ for (int col = 0 ; col < ui->Asortyment->columnCount() ; ++col) {
+ allItems.append(ui->Asortyment->item(row, col));
+ }
+ }
+ ui->Asortyment->show();
+     ui->Asortyment->resizeColumnsToContents();
+}
+
+
+void Magazyn::zapiszBaze()
+{
+    //ZAPISYWANIE
+    int wiersze = ui->Asortyment->rowCount();
+    int kolumny = ui->Asortyment->columnCount();
+
+    QString polecenie;
+
+      for(int w=0;w<wiersze;w++)
+    {
+         polecenie="UPDATE asortyment SET ";
+       for(int k=0;k<kolumny-1;k++)
+        {
+            polecenie.append(" ");
+            polecenie.append(ui->Asortyment->horizontalHeaderItem(k)->text());
+            polecenie.append(" = \"");
+            polecenie.append(ui->Asortyment->item(w,k)->text());
+            polecenie.append("\",");
+        }
+       polecenie.chop(1);                   //usuwa ostatni znak w stringu
+        polecenie.append(" WHERE ID = ");
+        polecenie.append(ui->Asortyment->verticalHeaderItem(w)->text());
+
+
+ QSqlQuery query(polecenie);
+    }
+
 
 
 }
 
 
+void Magazyn::on_pushButton_add_clicked()
+{
+    addRecord();
+}
+
+void Magazyn::on_pushButton_delete_clicked()
+{
+    deleteRecord();
+}
+
+void Magazyn::on_pushButton_save_clicked()
+{
+    zapiszBaze();
+}
+
+void Magazyn::on_pushButton_refresh_clicked()
+{
+    odswiezBaze();
+}
+
+void Magazyn::on_pushButton_up_clicked()
+{
+    int current = ui->Asortyment->currentRow();
+    if(current-1<0)
+    {
+        ui->Asortyment->selectRow(ui->Asortyment->rowCount()-1);
+    }
+    else
+    {
+         ui->Asortyment->selectRow(current-1);
+    }
+
+}
+
+void Magazyn::on_pushButton_down_clicked()
+{
+    int current = ui->Asortyment->currentRow();
+    if(current+1>=ui->Asortyment->rowCount())
+    {
+        ui->Asortyment->selectRow(0);
+    }
+    else
+    {
+         ui->Asortyment->selectRow(current+1);
+    }
+}

@@ -1,5 +1,7 @@
 #include "zakupy.h"
 #include "ui_zakupy.h"
+#include <QFontDatabase>
+#include <QMessageBox>
 
 Zakupy::Zakupy(QWidget *parent) :
     QDialog(parent),
@@ -14,8 +16,26 @@ Zakupy::Zakupy(QWidget *parent) :
     ui->zakubyTable->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->zakubyTable->setSelectionBehavior(QAbstractItemView::SelectRows);
 
+    int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
 
-            ui->codeNumber->setFocus();
+
+    QFont fontAws;
+    fontAws.setFamily("FontAwesome");
+    fontAws.setPointSize(30);
+
+    ui->pushButton_delete->setFont(fontAws);
+    ui->pushButton_delete->setText("\uf1f8");
+
+    ui->pushButton_clear->setFont(fontAws);
+    ui->pushButton_clear->setText("\uf053");
+
+    ui->pushButton_up->setFont(fontAws);
+    ui->pushButton_down->setFont(fontAws);
+    ui->pushButton_up->setText("\uf0aa");
+    ui->pushButton_down->setText("\uf0ab");
+
+
+    ui->codeNumber->setFocus();
 }
 
 Zakupy::~Zakupy()

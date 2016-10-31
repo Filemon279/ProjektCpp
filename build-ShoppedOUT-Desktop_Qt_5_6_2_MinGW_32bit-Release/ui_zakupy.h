@@ -80,7 +80,8 @@ public:
             Zakupy->setObjectName(QStringLiteral("Zakupy"));
         Zakupy->resize(1156, 648);
         Zakupy->setLayoutDirection(Qt::LeftToRight);
-        Zakupy->setStyleSheet(QStringLiteral("#Zakupy {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}"));
+        Zakupy->setStyleSheet(QLatin1String("#Zakupy {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}\n"
+""));
         verticalLayout = new QVBoxLayout(Zakupy);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -199,7 +200,7 @@ public:
         label_7 = new QLabel(widget);
         label_7->setObjectName(QStringLiteral("label_7"));
         QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
+        font3.setFamily(QStringLiteral("FontAwesome"));
         font3.setPointSize(11);
         font3.setBold(false);
         font3.setWeight(50);

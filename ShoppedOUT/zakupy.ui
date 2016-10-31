@@ -17,7 +17,8 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <property name="styleSheet">
-   <string notr="true">#Zakupy {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}</string>
+   <string notr="true">#Zakupy {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -215,7 +216,7 @@ color:white
            <widget class="QLabel" name="label_7">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <family>FontAwesome</family>
               <pointsize>11</pointsize>
               <weight>50</weight>
               <bold>false</bold>
