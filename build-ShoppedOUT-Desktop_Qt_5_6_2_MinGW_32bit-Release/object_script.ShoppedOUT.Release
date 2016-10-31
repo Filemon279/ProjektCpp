@@ -8,6 +8,7 @@ INPUT(
 ./release\bazadanych.o
 ./release\skanowanie.o
 ./release\zakupy.o
+./release\magazyn.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
 ./release\moc_sklepwindow.o
@@ -16,4 +17,5 @@ INPUT(
 ./release\moc_settingswindow.o
 ./release\moc_skanowanie.o
 ./release\moc_zakupy.o
+./release\moc_magazyn.o
 );

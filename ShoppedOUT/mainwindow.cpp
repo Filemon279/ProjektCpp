@@ -87,3 +87,13 @@ void MainWindow::on_zakupyButton_clicked()
     zakupy->exec();
 
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    magazyn = new  Magazyn(this);
+    magazyn->setModal(true);
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)),  magazyn,SLOT(receiveBaza(QSqlDatabase)));
+    emit sendBaza(Baza.db);
+    magazyn->showFullScreen();
+    magazyn->exec();
+}

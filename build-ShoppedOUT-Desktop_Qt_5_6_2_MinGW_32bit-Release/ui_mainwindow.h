@@ -34,6 +34,7 @@ public:
     QTextEdit *adminText;
     QLabel *statusBazy;
     QPushButton *zakupyButton;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -142,6 +143,9 @@ public:
         zakupyButton = new QPushButton(MainWidget);
         zakupyButton->setObjectName(QStringLiteral("zakupyButton"));
         zakupyButton->setGeometry(QRect(10, 580, 141, 41));
+        pushButton = new QPushButton(MainWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(784, 10, 191, 51));
         MainWindow->setCentralWidget(MainWidget);
 
         retranslateUi(MainWindow);
@@ -162,6 +166,7 @@ public:
         magazynButton->setText(QApplication::translate("MainWindow", "MAGAZYN", 0));
         statusBazy->setText(QString());
         zakupyButton->setText(QApplication::translate("MainWindow", "TEST - ZAKUPY", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "TEST - MAGAZYN", 0));
     } // retranslateUi
 
 };
