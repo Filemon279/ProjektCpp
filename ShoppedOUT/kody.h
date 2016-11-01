@@ -21,6 +21,8 @@ private slots:
     void receiveBaza(QSqlDatabase Baza);
 
 
+    void on_Asortyment_itemSelectionChanged();
+
 private:
     Ui::Kody *ui;
     void odswiezBaze();

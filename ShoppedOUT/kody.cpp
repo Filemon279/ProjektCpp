@@ -1,5 +1,7 @@
 #include "kody.h"
 #include "ui_kody.h"
+#include <QFontDatabase>
+#include <QMessageBox>
 
 Kody::Kody(QWidget *parent) :
     QDialog(parent),
@@ -12,6 +14,14 @@ Kody::Kody(QWidget *parent) :
     ui->Asortyment->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
     ui->Asortyment->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->Asortyment->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    int id = QFontDatabase::addApplicationFont(":/fonts/fre3of9.ttf");
+    QFont font39;
+    font39.setFamily("Free 3 of 9 Extended");
+    font39.setPointSize(60);
+    ui->label_kodKreskowy->setFont(font39);
+
+
 }
 
 Kody::~Kody()
@@ -135,6 +145,24 @@ void Kody::zapiszBaze()
  QSqlQuery query(polecenie);
     }
 
+
+
+}
+
+void Kody::on_Asortyment_itemSelectionChanged()
+{
+    QLabel *myLabel = ui->label_kodKreskowy;
+    QFont myFont = myLabel->font();
+
+
+   int row=ui->Asortyment->currentRow();
+   QString str = ui->Asortyment->item(row,5)->text(); //KOD KRESKOWY NUMER KOLUMNY
+   ui->label_kodKreskowy->setText("");
+
+
+
+
+       ui->label_kodKreskowy->setText("*"+str+"*");
 
 
 }
