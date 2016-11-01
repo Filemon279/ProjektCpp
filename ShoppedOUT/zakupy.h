@@ -54,6 +54,10 @@ private slots:
 
     void on_pushButton_enter_clicked();
 
+    void on_pushButton_up_clicked();
+
+    void on_pushButton_down_clicked();
+
 private:
     Ui::Zakupy *ui;
     void keyPressEvent( QKeyEvent *e);

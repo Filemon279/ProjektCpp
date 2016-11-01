@@ -242,6 +242,19 @@ border-image: url(:/img/Img/warehouse_clicked.png);
      <string>TEST - MAGAZYN</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TEST - KODY</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

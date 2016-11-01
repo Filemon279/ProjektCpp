@@ -108,6 +108,13 @@ public:
         verticalLayout->setContentsMargins(10, 20, 10, 20);
         graphicsView = new QGraphicsView(Magazyn);
         graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        graphicsView->setStyleSheet(QStringLiteral(""));
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::Dense4Pattern);
+        graphicsView->setBackgroundBrush(brush);
+        QBrush brush1(QColor(0, 0, 0, 255));
+        brush1.setStyle(Qt::Dense7Pattern);
+        graphicsView->setForegroundBrush(brush1);
 
         verticalLayout->addWidget(graphicsView);
 
@@ -289,7 +296,7 @@ public:
 
         retranslateUi(Magazyn);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Magazyn);

@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     bazadanych.cpp \
     skanowanie.cpp \
     zakupy.cpp \
-    magazyn.cpp
+    magazyn.cpp \
+    kody.cpp
 
 HEADERS  += mainwindow.h \
     sklepwindow.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     bazadanych.h \
     skanowanie.h \
     zakupy.h \
-    magazyn.h
+    magazyn.h \
+    kody.h
 
 FORMS    += mainwindow.ui \
     sklepwindow.ui \
@@ -40,7 +42,8 @@ FORMS    += mainwindow.ui \
     settingswindow.ui \
     skanowanie.ui \
     zakupy.ui \
-    magazyn.ui
+    magazyn.ui \
+    kody.ui
 
 RESOURCES += \
     resource.qrc

@@ -360,3 +360,31 @@ void Zakupy::enterAction()
 
 
 }
+
+void Zakupy::on_pushButton_up_clicked()
+{
+
+
+    int current = ui->zakubyTable->currentRow();
+    if(current-1<0)
+    {
+        ui->zakubyTable->selectRow(ui->zakubyTable->rowCount()-1);
+    }
+    else
+    {
+         ui->zakubyTable->selectRow(current-1);
+    }
+}
+
+void Zakupy::on_pushButton_down_clicked()
+{
+    int current = ui->zakubyTable->currentRow();
+    if(current+1>=ui->zakubyTable->rowCount())
+    {
+        ui->zakubyTable->selectRow(0);
+    }
+    else
+    {
+         ui->zakubyTable->selectRow(current+1);
+    }
+}

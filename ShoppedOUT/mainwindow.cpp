@@ -97,3 +97,13 @@ void MainWindow::on_pushButton_clicked()
     magazyn->showFullScreen();
     magazyn->exec();
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    kody = new  Kody(this);
+    kody->setModal(true);
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)), kody,SLOT(receiveBaza(QSqlDatabase)));
+    emit sendBaza(Baza.db);
+    kody->showFullScreen();
+    kody->exec();
+}

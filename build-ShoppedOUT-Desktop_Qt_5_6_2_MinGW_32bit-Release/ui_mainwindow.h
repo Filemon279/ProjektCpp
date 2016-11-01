@@ -35,6 +35,7 @@ public:
     QLabel *statusBazy;
     QPushButton *zakupyButton;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -146,6 +147,9 @@ public:
         pushButton = new QPushButton(MainWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(784, 10, 191, 51));
+        pushButton_2 = new QPushButton(MainWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(10, 10, 191, 51));
         MainWindow->setCentralWidget(MainWidget);
 
         retranslateUi(MainWindow);
@@ -167,6 +171,7 @@ public:
         statusBazy->setText(QString());
         zakupyButton->setText(QApplication::translate("MainWindow", "TEST - ZAKUPY", 0));
         pushButton->setText(QApplication::translate("MainWindow", "TEST - MAGAZYN", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "TEST - KODY", 0));
     } // retranslateUi
 
 };

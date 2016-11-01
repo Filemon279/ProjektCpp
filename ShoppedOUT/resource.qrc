@@ -19,6 +19,7 @@
         <file>Img/white.png</file>
         <file>Img/white_40_big.png</file>
         <file>Img/white_40_small.png</file>
+        <file>Img/plan_magazynu.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/fre3of9x.ttf</file>

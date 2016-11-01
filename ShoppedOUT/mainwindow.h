@@ -8,6 +8,7 @@
 #include "magazynwindow.h"
 #include "zakupy.h"
 #include "magazyn.h"
+#include "kody.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ public:
     Magazyn *magazyn;
     Zakupy *zakupy;
     bazadanych Baza;
+    Kody *kody;
 
 signals:
     void sendBaza(QSqlDatabase);
@@ -44,6 +46,8 @@ private slots:
     void on_zakupyButton_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

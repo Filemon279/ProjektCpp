@@ -132,6 +132,7 @@ void Magazyn::odswiezBaze()
 }
 
 
+
 void Magazyn::zapiszBaze()
 {
     //ZAPISYWANIE
@@ -209,4 +210,6 @@ void Magazyn::on_pushButton_down_clicked()
     {
          ui->Asortyment->selectRow(current+1);
     }
+
+
 }
