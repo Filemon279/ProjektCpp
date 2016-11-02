@@ -102,7 +102,11 @@ void Magazyn::odswiezBaze()
       int index=0 ;
       for(int i=0; i<=Rows-1;i++)
       {
-          QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i+1));
+         QString nazwa = query.record().fieldName(i+1);
+          QTableWidgetItem *newItem = new QTableWidgetItem(nazwa);
+          if(nazwa=="VAT") VAT_COLUMN=i;
+          else if(nazwa=="Cena_Brutto") BRUTTO_COLUMN=i;
+           else if(nazwa=="Cena_Netto") NETTO_COLUMN=i;
 
 
            ui->Asortyment->setHorizontalHeaderItem(i, newItem);     // naglowki
@@ -113,10 +117,9 @@ void Magazyn::odswiezBaze()
       {
           for(int i=0; i<=Rows-1;i++)
           {
-
               ui->Asortyment->setItem(index,i,new QTableWidgetItem(query.value(i+1).toString()));
-
           }
+              ui->Asortyment->item(index,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(index,BRUTTO_COLUMN)->flags() & ~Qt::ItemIsEditable); // BRUTTO NIE JEST ZMIENIALNA
               ui->Asortyment->setVerticalHeaderItem(index,new QTableWidgetItem(query.value(0).toString()));     //nr ID
       index++;
       }
@@ -211,5 +214,28 @@ void Magazyn::on_pushButton_down_clicked()
          ui->Asortyment->selectRow(current+1);
     }
 
+
+}
+
+void Magazyn::on_Asortyment_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn)
+{
+
+    QString out="";
+    out.append("Zmieniono R: ");
+    out.append(QString::number(currentRow));
+    out.append(" C:");
+    out.append(QString::number(currentColumn));
+   ui->label_info->setText(out);
+   float VAT = ui->Asortyment->item(currentRow,VAT_COLUMN)->text().toFloat();
+   float NETTO = ui->Asortyment->item(currentRow,NETTO_COLUMN)->text().toFloat();
+   float BRUTTO = NETTO+(NETTO*(VAT/100));
+   ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & Qt::ItemIsSelectable); // BRUTTO NIE JEST ZMIENIALNA
+   ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setText(QString::number(BRUTTO));
+   ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & ~Qt::ItemIsEditable); // BRUTTO NIE JEST ZMIENIALNA
+
+}
+
+void Magazyn::on_Asortyment_cellChanged(int row, int column)
+{
 
 }

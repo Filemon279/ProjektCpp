@@ -26,6 +26,9 @@ private:
     void deleteRecord();
     void addRecord();
     void zapiszBaze();
+    int VAT_COLUMN;
+    int BRUTTO_COLUMN;
+    int NETTO_COLUMN;
 
 
 private slots:
@@ -37,6 +40,8 @@ private slots:
     void on_pushButton_refresh_clicked();
     void on_pushButton_up_clicked();
     void on_pushButton_down_clicked();
+    void on_Asortyment_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
+    void on_Asortyment_cellChanged(int row, int column);
 };
 
 

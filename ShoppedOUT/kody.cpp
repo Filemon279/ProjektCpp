@@ -14,6 +14,7 @@ Kody::Kody(QWidget *parent) :
     ui->Asortyment->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
     ui->Asortyment->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->Asortyment->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->Asortyment->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     int id = QFontDatabase::addApplicationFont(":/fonts/fre3of9.ttf");
     QFont font39;
@@ -157,12 +158,32 @@ void Kody::on_Asortyment_itemSelectionChanged()
 
    int row=ui->Asortyment->currentRow();
    QString str = ui->Asortyment->item(row,5)->text(); //KOD KRESKOWY NUMER KOLUMNY
-   ui->label_kodKreskowy->setText("");
+
+   ui->label_kodKreskowy->setText("*"+str+"*");
 
 
+   QFont font = ui->label_kodKreskowy->font();
+   QRect cRect = ui->label_kodKreskowy->contentsRect();
 
+  if( ui->label_kodKreskowy->text().isEmpty() )
+          return;
 
-       ui->label_kodKreskowy->setText("*"+str+"*");
+   int fontSize = 1;
+
+    while( true )
+    {
+                QFont f(font);
+                     f.setPixelSize( fontSize );
+                QRect r = QFontMetrics(f).boundingRect( ui->label_kodKreskowy->text() );
+                if (r.height() < cRect.height() && r.width() < cRect.width() )
+                      fontSize++;
+                else
+                      break;
+    }
+
+   font.setPixelSize(fontSize);
+   ui->label_kodKreskowy->setFont(font);
+
 
 
 }

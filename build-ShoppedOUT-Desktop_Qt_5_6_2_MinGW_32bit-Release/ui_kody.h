@@ -19,8 +19,10 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -37,6 +39,9 @@ public:
     QGridLayout *gridLayout;
     QLabel *label_kodKreskowy;
     QGridLayout *gridLayout_2;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QWidget *tab_2;
 
     void setupUi(QDialog *Kody)
     {
@@ -89,7 +94,7 @@ public:
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         groupBox = new QGroupBox(Kody);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
@@ -104,11 +109,17 @@ public:
 ""));
         gridLayout = new QGridLayout(groupBox);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(-1, 20, -1, 20);
         label_kodKreskowy = new QLabel(groupBox);
         label_kodKreskowy->setObjectName(QStringLiteral("label_kodKreskowy"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Maximum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_kodKreskowy->sizePolicy().hasHeightForWidth());
+        label_kodKreskowy->setSizePolicy(sizePolicy2);
         QFont font2;
         font2.setFamily(QStringLiteral("Free 3 of 9 Extended"));
-        font2.setPointSize(24);
+        font2.setPointSize(50);
         label_kodKreskowy->setFont(font2);
         label_kodKreskowy->setStyleSheet(QLatin1String("color:black;\n"
 "background-color: rgb(255, 255, 255);"));
@@ -124,6 +135,17 @@ public:
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        tabWidget = new QTabWidget(Kody);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tabWidget->addTab(tab_2, QString());
+
+        gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
+
 
         verticalLayout_2->addLayout(gridLayout_2);
 
@@ -142,6 +164,8 @@ public:
         label_info->setText(QString());
         groupBox->setTitle(QApplication::translate("Kody", "Kod Kreskowy", 0));
         label_kodKreskowy->setText(QApplication::translate("Kody", "*123*", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Kody", "Tab 1", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Kody", "Tab 2", 0));
     } // retranslateUi
 
 };

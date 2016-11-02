@@ -15,7 +15,7 @@ Zakupy::Zakupy(QWidget *parent) :
     ui->zakubyTable->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
     ui->zakubyTable->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->zakubyTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-
+    ui->zakubyTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
 
 
