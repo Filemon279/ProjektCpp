@@ -19,6 +19,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -37,7 +38,12 @@ public:
     QVBoxLayout *verticalLayout_4;
     QGroupBox *groupBox;
     QGridLayout *gridLayout;
+    QLabel *label_kodNumer;
+    QLabel *label_nazwa;
+    QLabel *label_opis;
     QLabel *label_kodKreskowy;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
     QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
     QWidget *tab;
@@ -109,7 +115,43 @@ public:
 ""));
         gridLayout = new QGridLayout(groupBox);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setHorizontalSpacing(10);
+        gridLayout->setVerticalSpacing(0);
         gridLayout->setContentsMargins(-1, 20, -1, 20);
+        label_kodNumer = new QLabel(groupBox);
+        label_kodNumer->setObjectName(QStringLiteral("label_kodNumer"));
+        label_kodNumer->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"color:black"));
+        label_kodNumer->setFrameShadow(QFrame::Plain);
+        label_kodNumer->setLineWidth(1);
+        label_kodNumer->setMidLineWidth(0);
+        label_kodNumer->setTextFormat(Qt::AutoText);
+        label_kodNumer->setScaledContents(false);
+        label_kodNumer->setAlignment(Qt::AlignCenter);
+        label_kodNumer->setWordWrap(false);
+        label_kodNumer->setMargin(5);
+
+        gridLayout->addWidget(label_kodNumer, 3, 1, 1, 1);
+
+        label_nazwa = new QLabel(groupBox);
+        label_nazwa->setObjectName(QStringLiteral("label_nazwa"));
+        label_nazwa->setFont(font);
+        label_nazwa->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"color:black"));
+        label_nazwa->setAlignment(Qt::AlignCenter);
+        label_nazwa->setMargin(5);
+
+        gridLayout->addWidget(label_nazwa, 0, 1, 1, 1);
+
+        label_opis = new QLabel(groupBox);
+        label_opis->setObjectName(QStringLiteral("label_opis"));
+        label_opis->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"color:black"));
+        label_opis->setAlignment(Qt::AlignCenter);
+        label_opis->setMargin(5);
+
+        gridLayout->addWidget(label_opis, 1, 1, 1, 1);
+
         label_kodKreskowy = new QLabel(groupBox);
         label_kodKreskowy->setObjectName(QStringLiteral("label_kodKreskowy"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Maximum);
@@ -124,8 +166,37 @@ public:
         label_kodKreskowy->setStyleSheet(QLatin1String("color:black;\n"
 "background-color: rgb(255, 255, 255);"));
         label_kodKreskowy->setAlignment(Qt::AlignCenter);
+        label_kodKreskowy->setMargin(5);
 
-        gridLayout->addWidget(label_kodKreskowy, 0, 0, 1, 1);
+        gridLayout->addWidget(label_kodKreskowy, 2, 1, 1, 1);
+
+        pushButton_2 = new QPushButton(groupBox);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(10);
+        font3.setBold(true);
+        font3.setWeight(75);
+        pushButton_2->setFont(font3);
+        pushButton_2->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
+"color:black"));
+
+        gridLayout->addWidget(pushButton_2, 2, 0, 2, 1);
+
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy3);
+        pushButton->setFont(font3);
+        pushButton->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
+"color:black"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 2, 1);
 
 
         verticalLayout_4->addWidget(groupBox);
@@ -137,6 +208,13 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         tabWidget = new QTabWidget(Kody);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setStyleSheet(QLatin1String("\n"
+"QTabBar::tab {height: 70px; width: 120px};\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
+"\n"
+"\n"
+""));
+        tabWidget->setTabPosition(QTabWidget::South);
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget->addTab(tab, QString());
@@ -163,7 +241,12 @@ public:
         Kody->setWindowTitle(QApplication::translate("Kody", "Dialog", 0));
         label_info->setText(QString());
         groupBox->setTitle(QApplication::translate("Kody", "Kod Kreskowy", 0));
-        label_kodKreskowy->setText(QApplication::translate("Kody", "*123*", 0));
+        label_kodNumer->setText(QApplication::translate("Kody", "04041995", 0));
+        label_nazwa->setText(QApplication::translate("Kody", "Nazwa", 0));
+        label_opis->setText(QApplication::translate("Kody", "Opis", 0));
+        label_kodKreskowy->setText(QApplication::translate("Kody", "*04041995*", 0));
+        pushButton_2->setText(QApplication::translate("Kody", "Drukuj Stron\304\231", 0));
+        pushButton->setText(QApplication::translate("Kody", "Drukuj Sztuk\304\231", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Kody", "Tab 1", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Kody", "Tab 2", 0));
     } // retranslateUi

@@ -89,8 +89,12 @@ void Kody::odswiezBaze()
       int index=0 ;
       for(int i=0; i<=Rows-1;i++)
       {
+          QString nazwa = query.record().fieldName(i+1);
           QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i+1));
 
+          if(nazwa=="Opis") OPIS_COLUMN=i;
+          else if(nazwa=="Nazwa") NAZWA_COLUMN=i;
+           else if(nazwa=="Kod_Kreskowy") KOD_COLUMN=i;
 
            ui->Asortyment->setHorizontalHeaderItem(i, newItem);     // naglowki
 
@@ -100,9 +104,7 @@ void Kody::odswiezBaze()
       {
           for(int i=0; i<=Rows-1;i++)
           {
-
               ui->Asortyment->setItem(index,i,new QTableWidgetItem(query.value(i+1).toString()));
-
           }
               ui->Asortyment->setVerticalHeaderItem(index,new QTableWidgetItem(query.value(0).toString()));     //nr ID
       index++;
@@ -157,9 +159,13 @@ void Kody::on_Asortyment_itemSelectionChanged()
 
 
    int row=ui->Asortyment->currentRow();
-   QString str = ui->Asortyment->item(row,5)->text(); //KOD KRESKOWY NUMER KOLUMNY
-
-   ui->label_kodKreskowy->setText("*"+str+"*");
+   QString kodKreskowy = ui->Asortyment->item(row,KOD_COLUMN)->text(); //KOD KRESKOWY NUMER KOLUMNY
+   QString opis = ui->Asortyment->item(row,OPIS_COLUMN)->text();
+   QString nazwa = ui->Asortyment->item(row,NAZWA_COLUMN)->text();
+   ui->label_kodKreskowy->setText("*"+kodKreskowy+"*");
+   ui->label_opis->setText(opis);
+   ui->label_kodNumer->setText(kodKreskowy);
+   ui->label_nazwa->setText(nazwa);
 
 
    QFont font = ui->label_kodKreskowy->font();
@@ -175,8 +181,10 @@ void Kody::on_Asortyment_itemSelectionChanged()
                 QFont f(font);
                      f.setPixelSize( fontSize );
                 QRect r = QFontMetrics(f).boundingRect( ui->label_kodKreskowy->text() );
-                if (r.height() < cRect.height() && r.width() < cRect.width() )
+                if(fontSize > 50) break;
+                else if (r.height() < cRect.height() && r.width() < cRect.width() )
                       fontSize++;
+
                 else
                       break;
     }

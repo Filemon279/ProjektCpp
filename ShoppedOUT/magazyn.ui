@@ -44,6 +44,7 @@
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));
 background-image: url(:/img/Img/white_40_small.png);
  background-repeat: no-repeat;
+
  background-position: center;
 background-opacity: 153;
 gridline-color:white;

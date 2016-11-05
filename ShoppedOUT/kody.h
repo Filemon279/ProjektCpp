@@ -32,6 +32,9 @@ private:
     void deleteRecord();
     void addRecord();
     void zapiszBaze();
+    int OPIS_COLUMN;
+    int KOD_COLUMN;
+    int NAZWA_COLUMN;
 };
 
 #endif // KODY_H

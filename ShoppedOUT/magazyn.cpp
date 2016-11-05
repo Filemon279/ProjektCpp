@@ -16,6 +16,7 @@ Magazyn::Magazyn(QWidget *parent) :
     ui->Asortyment->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->Asortyment->setSelectionBehavior(QAbstractItemView::SelectRows);
 
+
     int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
    // QMessageBox::information(NULL,"Message",QString::number(id));  // this shows id is 0.
 
@@ -230,7 +231,7 @@ void Magazyn::on_Asortyment_currentCellChanged(int currentRow, int currentColumn
    float NETTO = ui->Asortyment->item(currentRow,NETTO_COLUMN)->text().toFloat();
    float BRUTTO = NETTO+(NETTO*(VAT/100));
    ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & Qt::ItemIsSelectable); // BRUTTO NIE JEST ZMIENIALNA
-   ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setText(QString::number(BRUTTO));
+   ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setText(QString::number(BRUTTO,'f',2));
    ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & ~Qt::ItemIsEditable); // BRUTTO NIE JEST ZMIENIALNA
 
 }
