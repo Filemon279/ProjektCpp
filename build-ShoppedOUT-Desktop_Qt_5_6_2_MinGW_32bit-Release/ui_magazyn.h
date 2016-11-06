@@ -80,7 +80,7 @@ public:
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
 "background-image: url(:/img/Img/white_40_small.png);\n"
 " background-repeat: no-repeat;\n"
-"selection-background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));\n"
+"\n"
 " background-position: center;\n"
 "background-opacity: 153;\n"
 "gridline-color:white;\n"

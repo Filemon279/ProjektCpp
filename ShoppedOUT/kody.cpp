@@ -2,6 +2,7 @@
 #include "ui_kody.h"
 #include <QFontDatabase>
 #include <QMessageBox>
+#include <QFileDialog>
 
 Kody::Kody(QWidget *parent) :
     QDialog(parent),
@@ -22,13 +23,17 @@ Kody::Kody(QWidget *parent) :
     font39.setPointSize(60);
     ui->label_kodKreskowy->setFont(font39);
 
-
 }
 
 Kody::~Kody()
 {
     delete ui;
 
+}
+
+QString Kody::wybierzLokalizacje()
+    {
+    return "dir";
 }
 
 
@@ -194,4 +199,14 @@ void Kody::on_Asortyment_itemSelectionChanged()
 
 
 
+}
+
+void Kody::on_pushButton_clicked()
+{
+    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                 "/home",
+                                                 QFileDialog::ShowDirsOnly
+                                                 | QFileDialog::DontResolveSymlinks);
+QString nazwa_kod = ui->label_kodNumer->text();
+    ui->widget_Kod->grab().save(dir+nazwa_kod+".png");
 }

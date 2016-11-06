@@ -23,11 +23,14 @@ private slots:
 
     void on_Asortyment_itemSelectionChanged();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Kody *ui;
     void odswiezBaze();
     int Columns;
     int Rows;
+    QString wybierzLokalizacje();
     QList<QTableWidgetItem *> allItems;
     void deleteRecord();
     void addRecord();
