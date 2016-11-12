@@ -31,6 +31,7 @@ private:
     int NETTO_COLUMN;
 
 
+
 private slots:
     void receiveBaza(QSqlDatabase Baza);
 

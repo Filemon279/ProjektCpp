@@ -14,9 +14,6 @@ Skanowanie::Skanowanie(QWidget *parent) :
      ui->Zeskanowane->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
      ui->Zeskanowane->setSelectionMode(QAbstractItemView::SingleSelection);
      ui->Zeskanowane->setSelectionBehavior(QAbstractItemView::SelectRows);
-
-
-
 }
 
 Skanowanie::~Skanowanie()

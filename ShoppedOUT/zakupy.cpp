@@ -76,7 +76,7 @@ ui->zakubyTable->horizontalHeader()->setStretchLastSection(true);
 
 void Zakupy::receiveBaza(QSqlDatabase Baza)
 {
-
+BazaIN = Baza;
     if (!Baza.isOpen()) {
         if(!Baza.open())
         {
@@ -236,9 +236,15 @@ void Zakupy::on_pushButton_clear_clicked()
 
 void Zakupy::on_pushButton_delete_clicked()
 {
-    QString tekst="";
-    ui->codeNumber->setText(tekst);
-     ui->codeNumber->setFocus();
+     if(ui->zakubyTable->selectedItems().length()>0){
+    ui->zakubyTable->hideRow(ui->zakubyTable->currentRow());
+    for(int i =0;i<ui->zakubyTable->columnCount();i++)
+    {
+        ui->zakubyTable->item(ui->zakubyTable->currentRow(),i)->setText("");
+    }
+     }
+podlicz_cene();
+
 }
 
 void Zakupy::on_zakubyTable_clicked(const QModelIndex &index)
@@ -334,9 +340,20 @@ void Zakupy::enterAction()
    ui->codeNumber->setText("");
 
 
-   //Podliczanie cen
-   //1 netto
-   //2 brutto
+
+
+
+
+   podlicz_cene();
+
+
+
+}
+
+void Zakupy::podlicz_cene(){
+    //Podliczanie cen
+    //1 netto
+    //2 brutto
     int rows = ui->zakubyTable->rowCount();
      float suma_netto=0;
      float suma_brutto=0;
@@ -353,12 +370,6 @@ void Zakupy::enterAction()
      str_brutto.append("zł");
        ui->label_Brutto->setText(str_brutto);
        ui->label_netto->setText(str_netto);
-
-
-   //Koniec podlcizania
-
-
-
 }
 
 void Zakupy::on_pushButton_up_clicked()
@@ -388,3 +399,45 @@ void Zakupy::on_pushButton_down_clicked()
          ui->zakubyTable->selectRow(current+1);
     }
 }
+
+void Zakupy::on_pushButton_escape_clicked()
+{
+    QString tekst="";
+    ui->codeNumber->setText(tekst);
+     ui->codeNumber->setFocus();
+}
+
+void Zakupy::on_pushButton_clicked()
+{
+    if(ui->zakubyTable->selectedItems().length()>0){
+    QString kod = ui->zakubyTable->item(ui->zakubyTable->currentRow(),ui->zakubyTable->columnCount()-2)->text();
+    info = new produkt_info(this);
+    info->setModal(true);
+    connect(this,SIGNAL(send_productKey(QString)),  info,SLOT(get_productKey(QString)));
+    connect(this,SIGNAL(sendBaza(QSqlDatabase)),  info,SLOT(receiveBaza(QSqlDatabase)));
+    emit send_productKey(kod);
+     emit sendBaza(BazaIN);
+   info->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    info->exec();}
+}
+
+void Zakupy::on_pushButton_ilosc_clicked()
+{
+    ilosc_window = new produkt_ilosc(this);
+    ilosc_window->setModal(true);
+    connect(ilosc_window,SIGNAL(send_ilosc(int)), this,SLOT(get_ilosc(int)));
+  //   emit sendBaza(BazaIN);
+   ilosc_window->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    ilosc_window->exec();
+
+}
+
+void Zakupy::get_ilosc(int i)
+{
+    if(ui->zakubyTable->selectedItems().length()>0){
+       ui->zakubyTable->item(ui->zakubyTable->currentRow(),(ui->zakubyTable->columnCount()-1))->setText(QString::number(i));
+          }
+podlicz_cene();
+}
+
+

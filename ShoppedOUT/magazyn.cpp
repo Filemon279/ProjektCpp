@@ -49,7 +49,6 @@ Magazyn::~Magazyn()
 
 void Magazyn::receiveBaza(QSqlDatabase Baza)
 {
-
     if (!Baza.isOpen()) {
         if(!Baza.open())
         {
@@ -69,7 +68,6 @@ void Magazyn::receiveBaza(QSqlDatabase Baza)
 
     }
 odswiezBaze();
-
 }
 
 

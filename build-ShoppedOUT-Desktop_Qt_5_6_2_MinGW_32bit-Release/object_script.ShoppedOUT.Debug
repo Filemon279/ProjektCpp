@@ -10,6 +10,8 @@ INPUT(
 ./debug\zakupy.o
 ./debug\magazyn.o
 ./debug\kody.o
+./debug\produkt_info.o
+./debug\produkt_ilosc.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_sklepwindow.o
@@ -20,4 +22,6 @@ INPUT(
 ./debug\moc_zakupy.o
 ./debug\moc_magazyn.o
 ./debug\moc_kody.o
+./debug\moc_produkt_info.o
+./debug\moc_produkt_ilosc.o
 );

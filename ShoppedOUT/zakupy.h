@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "bazadanych.h"
+#include "produkt_info.h"
+#include "produkt_ilosc.h"
 #include <QKeyEvent>
 
 namespace Ui {
@@ -58,13 +60,31 @@ private slots:
 
     void on_pushButton_down_clicked();
 
+    void on_pushButton_escape_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_ilosc_clicked();
+
+    void get_ilosc(int i);
+
+
+
 private:
     Ui::Zakupy *ui;
+    produkt_info *info;
+    produkt_ilosc *ilosc_window;
     void keyPressEvent( QKeyEvent *e);
     QString polecenie;
     int ilosc = 0;
     int index=0 ;
     void enterAction();
+    void podlicz_cene();
+    QSqlDatabase BazaIN;
+
+signals:
+    void send_productKey(QString);
+    void sendBaza(QSqlDatabase);
 };
 
 #endif // ZAKUPY_H
