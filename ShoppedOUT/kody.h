@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "QTableWidgetItem"
 #include "bazadanych.h"
+#include <QtGlobal>
 
 namespace Ui {
 class Kody;
@@ -25,6 +26,14 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_dial_sliderMoved(int position);
+
+    void on_dial_valueChanged(int value);
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Kody *ui;
     void odswiezBaze();
@@ -35,6 +44,7 @@ private:
     void deleteRecord();
     void addRecord();
     void zapiszBaze();
+    bool sprawdzCzyUnikatowy(QString numer);
     int OPIS_COLUMN;
     int KOD_COLUMN;
     int NAZWA_COLUMN;

@@ -210,3 +210,54 @@ void Kody::on_pushButton_clicked()
 QString nazwa_kod = ui->label_kodNumer->text();
     ui->widget_Kod->grab().save(dir+nazwa_kod+".png");
 }
+
+void Kody::on_dial_sliderMoved(int position)
+{
+    ui->label_dlugosc->setText(QString::number(position));
+}
+
+
+
+void Kody::on_dial_valueChanged(int value)
+{
+      ui->label_dlugosc->setText(QString::number(value));
+}
+
+void Kody::on_pushButton_2_clicked()
+{
+    QString numer="";
+    for(int i=0;i<ui->dial->value();i++) numer.append(QString::number(qrand() % 10));
+    ui->lineEdit_wygenerowany->setText(numer);
+}
+
+void Kody::on_pushButton_3_clicked()
+{
+    QString numer = ui->lineEdit_wygenerowany->text();
+    ui->label_errors->setText("");
+    if (numer.length()<4)
+    {
+         ui->label_errors->setText("Nieprawidłowy numer");
+         return;
+    }
+    if (!sprawdzCzyUnikatowy(numer))
+    {
+       ui->label_errors->setText("Taki numer juz istnieje");
+        return;
+    }
+
+      if(ui->Asortyment->selectedItems().length()>0){
+         ui->Asortyment->item(ui->Asortyment->currentRow(),KOD_COLUMN)->setText(numer);
+      }
+      else return; // Nie ma co zapisywac jak nic nie zrobilo
+      zapiszBaze();
+}
+
+bool Kody::sprawdzCzyUnikatowy(QString numer)
+{
+
+    for (int i = 0;i<ui->Asortyment->rowCount();i++)
+    {
+        if(ui->Asortyment->item(i,KOD_COLUMN)->text()==numer) return 0;
+    }
+    return 1;
+}

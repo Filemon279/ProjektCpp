@@ -13,13 +13,16 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDial>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -38,6 +41,7 @@ public:
     QVBoxLayout *verticalLayout_4;
     QGroupBox *groupBox;
     QGridLayout *gridLayout;
+    QSpacerItem *verticalSpacer;
     QWidget *widget_Kod;
     QVBoxLayout *kodLayout;
     QLabel *label_nazwa;
@@ -47,13 +51,19 @@ public:
     QWidget *verticalWidget;
     QVBoxLayout *verticalLayout_3;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QSpacerItem *verticalSpacer_2;
     QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
     QWidget *tab;
     QGridLayout *gridLayout_4;
+    QLabel *label;
+    QLineEdit *lineEdit_wygenerowany;
     QPushButton *pushButton_3;
-    QWidget *tab_2;
+    QPushButton *pushButton_2;
+    QDial *dial;
+    QLabel *label_dlugosc;
+    QLabel *label_3;
+    QLabel *label_errors;
 
     void setupUi(QDialog *Kody)
     {
@@ -74,7 +84,7 @@ public:
         sizePolicy.setHeightForWidth(Asortyment->sizePolicy().hasHeightForWidth());
         Asortyment->setSizePolicy(sizePolicy);
         Asortyment->setStyleSheet(QLatin1String("gridline-color: white; \n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
+"background-color: rgba(0, 0, 0, 100);\n"
 "background-image: url(:/img/Img/white_40_small.png);\n"
 " background-repeat: no-repeat;\n"
 " background-position: center;\n"
@@ -124,6 +134,10 @@ public:
         gridLayout->setHorizontalSpacing(10);
         gridLayout->setVerticalSpacing(0);
         gridLayout->setContentsMargins(-1, 20, -1, 20);
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 0, 0, 1, 2);
+
         widget_Kod = new QWidget(groupBox);
         widget_Kod->setObjectName(QStringLiteral("widget_Kod"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -187,7 +201,7 @@ public:
         kodLayout->addWidget(label_kodNumer);
 
 
-        gridLayout->addWidget(widget_Kod, 0, 1, 1, 1);
+        gridLayout->addWidget(widget_Kod, 1, 1, 1, 1);
 
         verticalWidget = new QWidget(groupBox);
         verticalWidget->setObjectName(QStringLiteral("verticalWidget"));
@@ -208,17 +222,12 @@ public:
 
         verticalLayout_3->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(verticalWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        sizePolicy4.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy4);
-        pushButton_2->setFont(font);
-        pushButton_2->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));"));
 
-        verticalLayout_3->addWidget(pushButton_2);
+        gridLayout->addWidget(verticalWidget, 1, 0, 1, 1);
 
+        verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(verticalWidget, 0, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer_2, 2, 0, 1, 2);
 
 
         verticalLayout_4->addWidget(groupBox);
@@ -232,24 +241,130 @@ public:
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setStyleSheet(QLatin1String("\n"
 "QTabBar::tab {height: 70px; width: 120px};\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
+"background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"\n"
+"\n"
 "\n"
 "\n"
 ""));
         tabWidget->setTabPosition(QTabWidget::South);
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
+        tab->setStyleSheet(QLatin1String("#tab{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));}\n"
+""));
         gridLayout_4 = new QGridLayout(tab);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        gridLayout_4->setHorizontalSpacing(20);
+        gridLayout_4->setVerticalSpacing(15);
+        gridLayout_4->setContentsMargins(20, 20, 20, 20);
+        label = new QLabel(tab);
+        label->setObjectName(QStringLiteral("label"));
+        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy5);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(14);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label->setFont(font3);
+        label->setStyleSheet(QStringLiteral("color:white"));
+        label->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+
+        gridLayout_4->addWidget(label, 0, 1, 1, 2);
+
+        lineEdit_wygenerowany = new QLineEdit(tab);
+        lineEdit_wygenerowany->setObjectName(QStringLiteral("lineEdit_wygenerowany"));
+        lineEdit_wygenerowany->setMinimumSize(QSize(0, 50));
+        lineEdit_wygenerowany->setBaseSize(QSize(0, 1));
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(18);
+        font4.setBold(true);
+        font4.setWeight(75);
+        lineEdit_wygenerowany->setFont(font4);
+        lineEdit_wygenerowany->setStyleSheet(QLatin1String("background-color: rgba(0, 0, 0, 100);\n"
+"color:white"));
+        lineEdit_wygenerowany->setAlignment(Qt::AlignCenter);
+        lineEdit_wygenerowany->setReadOnly(true);
+
+        gridLayout_4->addWidget(lineEdit_wygenerowany, 6, 1, 1, 2);
+
         pushButton_3 = new QPushButton(tab);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy6);
+        pushButton_3->setFont(font);
+        pushButton_3->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
+"color:white"));
 
-        gridLayout_4->addWidget(pushButton_3, 0, 0, 1, 1);
+        gridLayout_4->addWidget(pushButton_3, 7, 2, 1, 1);
+
+        pushButton_2 = new QPushButton(tab);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        sizePolicy6.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy6);
+        pushButton_2->setFont(font);
+        pushButton_2->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
+"color:white"));
+
+        gridLayout_4->addWidget(pushButton_2, 7, 1, 1, 1);
+
+        dial = new QDial(tab);
+        dial->setObjectName(QStringLiteral("dial"));
+        dial->setStyleSheet(QStringLiteral("background-color: rgb(77, 159, 0);"));
+        dial->setMinimum(5);
+        dial->setMaximum(13);
+
+        gridLayout_4->addWidget(dial, 3, 1, 1, 2);
+
+        label_dlugosc = new QLabel(tab);
+        label_dlugosc->setObjectName(QStringLiteral("label_dlugosc"));
+        sizePolicy5.setHeightForWidth(label_dlugosc->sizePolicy().hasHeightForWidth());
+        label_dlugosc->setSizePolicy(sizePolicy5);
+        QFont font5;
+        font5.setFamily(QStringLiteral("Arial"));
+        font5.setPointSize(16);
+        font5.setBold(false);
+        font5.setWeight(50);
+        label_dlugosc->setFont(font5);
+        label_dlugosc->setStyleSheet(QStringLiteral("color:white"));
+        label_dlugosc->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_4->addWidget(label_dlugosc, 4, 2, 1, 1);
+
+        label_3 = new QLabel(tab);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        sizePolicy5.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy5);
+        label_3->setFont(font);
+        label_3->setStyleSheet(QStringLiteral("color:white"));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_4->addWidget(label_3, 4, 1, 1, 1);
+
+        label_errors = new QLabel(tab);
+        label_errors->setObjectName(QStringLiteral("label_errors"));
+        sizePolicy5.setHeightForWidth(label_errors->sizePolicy().hasHeightForWidth());
+        label_errors->setSizePolicy(sizePolicy5);
+        QFont font6;
+        font6.setFamily(QStringLiteral("Arial"));
+        font6.setPointSize(10);
+        font6.setBold(true);
+        font6.setWeight(75);
+        label_errors->setFont(font6);
+        label_errors->setStyleSheet(QStringLiteral("color:orange"));
+        label_errors->setAlignment(Qt::AlignCenter);
+
+        gridLayout_4->addWidget(label_errors, 1, 1, 1, 2);
 
         tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
 
         gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
 
@@ -261,6 +376,9 @@ public:
 
 
         retranslateUi(Kody);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(Kody);
     } // setupUi
@@ -275,10 +393,13 @@ public:
         label_kodKreskowy->setText(QApplication::translate("Kody", "*04041995*", 0));
         label_kodNumer->setText(QApplication::translate("Kody", "04041995", 0));
         pushButton->setText(QApplication::translate("Kody", "Zapisz do pliku", 0));
-        pushButton_2->setText(QApplication::translate("Kody", "PushButton", 0));
-        pushButton_3->setText(QApplication::translate("Kody", "PushButton", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Kody", "Tab 1", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Kody", "Tab 2", 0));
+        label->setText(QApplication::translate("Kody", "GENERUJ KOD 3-9", 0));
+        pushButton_3->setText(QApplication::translate("Kody", "Przypisz zaznaczonemu", 0));
+        pushButton_2->setText(QApplication::translate("Kody", "Generuj", 0));
+        label_dlugosc->setText(QApplication::translate("Kody", "5", 0));
+        label_3->setText(QApplication::translate("Kody", "D\305\202ugo\305\233\304\207:", 0));
+        label_errors->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Kody", "Generuj 3-9", 0));
     } // retranslateUi
 
 };

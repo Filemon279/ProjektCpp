@@ -1,9 +1,5 @@
 INPUT(
 ./release\main.o
-./release\mainwindow.o
-./release\sklepwindow.o
-./release\magazynwindow.o
-./release\kodywindow.o
 ./release\settingswindow.o
 ./release\bazadanych.o
 ./release\skanowanie.o
@@ -12,11 +8,8 @@ INPUT(
 ./release\kody.o
 ./release\produkt_info.o
 ./release\produkt_ilosc.o
+./release\shopped_main.o
 ./release\qrc_resource.o
-./release\moc_mainwindow.o
-./release\moc_sklepwindow.o
-./release\moc_magazynwindow.o
-./release\moc_kodywindow.o
 ./release\moc_settingswindow.o
 ./release\moc_skanowanie.o
 ./release\moc_zakupy.o
@@ -24,4 +17,5 @@ INPUT(
 ./release\moc_kody.o
 ./release\moc_produkt_info.o
 ./release\moc_produkt_ilosc.o
+./release\moc_shopped_main.o
 );

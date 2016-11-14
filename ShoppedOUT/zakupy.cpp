@@ -375,28 +375,35 @@ void Zakupy::podlicz_cene(){
 void Zakupy::on_pushButton_up_clicked()
 {
 
-
+    int i = 1;
     int current = ui->zakubyTable->currentRow();
-    if(current-1<0)
+
+    //Pomijamy ukryte kolumny
+    while(ui->zakubyTable->isRowHidden(ui->zakubyTable->currentRow()-i)) i++;
+    if(current-i<0)
     {
-        ui->zakubyTable->selectRow(ui->zakubyTable->rowCount()-1);
+        ui->zakubyTable->selectRow(ui->zakubyTable->rowCount()-i);
     }
     else
     {
-         ui->zakubyTable->selectRow(current-1);
+         ui->zakubyTable->selectRow(current-i);
     }
 }
 
 void Zakupy::on_pushButton_down_clicked()
 {
     int current = ui->zakubyTable->currentRow();
-    if(current+1>=ui->zakubyTable->rowCount())
+    int i =1;
+
+    //Pomijamy UKRYTE kolumny
+    while(ui->zakubyTable->isRowHidden(ui->zakubyTable->currentRow()+i)) i++;
+    if(current+i>=ui->zakubyTable->rowCount())
     {
         ui->zakubyTable->selectRow(0);
     }
     else
     {
-         ui->zakubyTable->selectRow(current+1);
+         ui->zakubyTable->selectRow(current+i);
     }
 }
 

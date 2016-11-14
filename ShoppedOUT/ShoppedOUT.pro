@@ -14,10 +14,6 @@ TARGET = ShoppedOUT
 TEMPLATE = app
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    sklepwindow.cpp \
-    magazynwindow.cpp \
-    kodywindow.cpp \
     settingswindow.cpp \
     bazadanych.cpp \
     skanowanie.cpp \
@@ -25,12 +21,10 @@ SOURCES += main.cpp\
     magazyn.cpp \
     kody.cpp \
     produkt_info.cpp \
-    produkt_ilosc.cpp
+    produkt_ilosc.cpp \
+    shopped_main.cpp
 
-HEADERS  += mainwindow.h \
-    sklepwindow.h \
-    magazynwindow.h \
-    kodywindow.h \
+HEADERS  += \
     settingswindow.h \
     bazadanych.h \
     skanowanie.h \
@@ -38,19 +32,18 @@ HEADERS  += mainwindow.h \
     magazyn.h \
     kody.h \
     produkt_info.h \
-    produkt_ilosc.h
+    produkt_ilosc.h \
+    shopped_main.h
 
-FORMS    += mainwindow.ui \
-    sklepwindow.ui \
-    magazynwindow.ui \
-    kodywindow.ui \
+FORMS    += \
     settingswindow.ui \
     skanowanie.ui \
     zakupy.ui \
     magazyn.ui \
     kody.ui \
     produkt_info.ui \
-    produkt_ilosc.ui
+    produkt_ilosc.ui \
+    shopped_main.ui
 
 RESOURCES += \
     resource.qrc
