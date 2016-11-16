@@ -1,6 +1,7 @@
 #include "magazyn.h"
 #include "ui_magazyn.h"
 #include <QFontDatabase>
+#include <QFileDialog>
 #include <QMessageBox>
 
 
@@ -10,15 +11,10 @@ Magazyn::Magazyn(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Asortyment->horizontalHeader()->setStretchLastSection(true);
- //   ui->Asortyment->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255)); background-image: url(:/img/Img/white_40_small.png);background-repeat: no-repeat;background-position: center;background-opacity: 153;gridline-color:white" );
     ui->Asortyment->verticalHeader()->setStyleSheet("color: black; border: 1px solid;");
     ui->Asortyment->horizontalHeader()->setStyleSheet("color: black; border: 1px solid;");
     ui->Asortyment->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->Asortyment->setSelectionBehavior(QAbstractItemView::SelectRows);
-
-
-    int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
-   // QMessageBox::information(NULL,"Message",QString::number(id));  // this shows id is 0.
 
     QFont fontAws;
     fontAws.setFamily("FontAwesome");
@@ -37,6 +33,21 @@ Magazyn::Magazyn(QWidget *parent) :
     ui->pushButton_delete->setText("\uf1f8 USUŃ ZAZNACZONE");
     ui->pushButton_refresh->setText("\uf021 ODŚWIEŻ BAZĘ");
     ui->pushButton_save->setText("\uf0c7 ZAPISZ ZMIANY");
+
+
+
+              ui->graphicsView->show();
+
+
+            //	        QMessageBox::information(this, tr("WIDTH HEIGHT"), tr("Width= %1 Height= %2").arg(QString::number(width, 10), QString::number(height, 10)));
+
+
+          //  ui->graphicsView->fitInView(viewScene->itemsBoundingRect() ,Qt::KeepAspectRatio);
+
+
+
+
+
 }
 
 Magazyn::~Magazyn()
@@ -45,6 +56,32 @@ Magazyn::~Magazyn()
 }
 
 
+
+
+
+
+void Magazyn::keyPressEvent(QKeyEvent* e)
+{
+      if( (e->key() == Qt::Key_Escape))
+      {
+        this->close();
+      }
+}
+/*
+
+void Magazyn::showEvent(QShowEvent *) {
+    int width = ui->graphicsView->width();
+    int height = ui->graphicsView->height();
+    QImage tempImage(":/img/Img/projekt1.jpg");
+    QImage image = tempImage.convertToFormat(QImage::Format_RGB32);
+    QPixmap pixmap = QPixmap::fromImage(image);
+    viewScene = new QGraphicsScene(QRectF(0, 0, width, height), 0);
+    QGraphicsPixmapItem *item = viewScene->addPixmap(pixmap.scaled(QSize(
+    (int)viewScene->width(), (int)viewScene->height()),
+    Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    ui->graphicsView->fitInView(viewScene->sceneRect(),Qt::KeepAspectRatio);
+     ui->graphicsView->setScene(viewScene);
+}*/
 
 
 void Magazyn::receiveBaza(QSqlDatabase Baza)
@@ -86,8 +123,10 @@ void Magazyn::addRecord()
 {
     QSqlQuery query("INSERT INTO asortyment() VALUES ()");
     //ODSWIEZAMY
-          odswiezBaze();
+    odswiezBaze();
 }
+
+
 
 
 void Magazyn::odswiezBaze()
@@ -105,7 +144,7 @@ void Magazyn::odswiezBaze()
           QTableWidgetItem *newItem = new QTableWidgetItem(nazwa);
           if(nazwa=="VAT") VAT_COLUMN=i;
           else if(nazwa=="Cena_Brutto") BRUTTO_COLUMN=i;
-           else if(nazwa=="Cena_Netto") NETTO_COLUMN=i;
+          else if(nazwa=="Cena_Netto") NETTO_COLUMN=i;
 
 
            ui->Asortyment->setHorizontalHeaderItem(i, newItem);     // naglowki
@@ -161,9 +200,6 @@ void Magazyn::zapiszBaze()
 
  QSqlQuery query(polecenie);
     }
-
-
-
 }
 
 
@@ -198,7 +234,6 @@ void Magazyn::on_pushButton_up_clicked()
     {
          ui->Asortyment->selectRow(current-1);
     }
-
 }
 
 void Magazyn::on_pushButton_down_clicked()
@@ -238,3 +273,9 @@ void Magazyn::on_Asortyment_cellChanged(int row, int column)
 {
 
 }
+
+
+
+
+
+

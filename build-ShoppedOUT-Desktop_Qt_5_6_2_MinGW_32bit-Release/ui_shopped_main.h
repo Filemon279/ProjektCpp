@@ -25,27 +25,25 @@ class Ui_Shopped_main
 {
 public:
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer;
     QPushButton *codeButton;
     QPushButton *sklepButton;
-    QPushButton *magazynButton;
-    QSpacerItem *verticalSpacer;
     QSpacerItem *horizontalSpacer_2;
-    QSpacerItem *verticalSpacer_2;
     QSpacerItem *horizontalSpacer;
-    QSpacerItem *verticalSpacer_3;
+    QPushButton *magazynButton;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QDialog *Shopped_main)
     {
         if (Shopped_main->objectName().isEmpty())
             Shopped_main->setObjectName(QStringLiteral("Shopped_main"));
         Shopped_main->resize(981, 488);
-        Shopped_main->setStyleSheet(QStringLiteral("#Shopped_main {border-image: url(:/img/Img/bg_dark.jpg);}"));
+        Shopped_main->setStyleSheet(QStringLiteral("#Shopped_main {border-image: url(:/img/Img/bg_dark_logo.jpg);}"));
         gridLayout = new QGridLayout(Shopped_main);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
 
-        gridLayout->addItem(horizontalSpacer_3, 1, 2, 1, 1);
+        gridLayout->addItem(verticalSpacer, 0, 1, 1, 3);
 
         codeButton = new QPushButton(Shopped_main);
         codeButton->setObjectName(QStringLiteral("codeButton"));
@@ -66,7 +64,7 @@ public:
 "\n"
 "}"));
 
-        gridLayout->addWidget(codeButton, 3, 2, 1, 1);
+        gridLayout->addWidget(codeButton, 2, 2, 1, 1);
 
         sklepButton = new QPushButton(Shopped_main);
         sklepButton->setObjectName(QStringLiteral("sklepButton"));
@@ -87,6 +85,14 @@ public:
 ""));
 
         gridLayout->addWidget(sklepButton, 1, 1, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 1, 4, 3, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 1, 0, 3, 1);
 
         magazynButton = new QPushButton(Shopped_main);
         magazynButton->setObjectName(QStringLiteral("magazynButton"));
@@ -110,25 +116,9 @@ public:
 
         gridLayout->addWidget(magazynButton, 1, 3, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout->addItem(verticalSpacer, 0, 1, 1, 3);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 1, 4, 4, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 5, 1, 1, 3);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 1, 0, 4, 1);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Preferred);
-
-        gridLayout->addItem(verticalSpacer_3, 2, 2, 1, 1);
+        gridLayout->addItem(verticalSpacer_2, 3, 2, 1, 1);
 
 
         retranslateUi(Shopped_main);

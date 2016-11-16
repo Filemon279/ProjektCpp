@@ -20,6 +20,15 @@
         <file>Img/white_40_big.png</file>
         <file>Img/white_40_small.png</file>
         <file>Img/plan_magazynu.png</file>
+        <file>Img/projekt1.jpg</file>
+        <file>Img/kod_kreskowy.png</file>
+        <file>Img/magazyn_paleta.png</file>
+        <file>Img/kod_kreskowy_clicked.png</file>
+        <file>Img/magazyn_paleta_clicked.png</file>
+        <file>Img/bg_dark_logo.jpg</file>
+        <file>Img/basket.png</file>
+        <file>Img/basket_clicked.png</file>
+        <file>Img/gps.gif</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/fre3of9x.ttf</file>

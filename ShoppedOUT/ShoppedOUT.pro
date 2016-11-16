@@ -16,28 +16,27 @@ TEMPLATE = app
 SOURCES += main.cpp\
     settingswindow.cpp \
     bazadanych.cpp \
-    skanowanie.cpp \
     zakupy.cpp \
     magazyn.cpp \
     kody.cpp \
     produkt_info.cpp \
     produkt_ilosc.cpp \
-    shopped_main.cpp
+    shopped_main.cpp \
+    wyswietl.cpp
 
 HEADERS  += \
     settingswindow.h \
     bazadanych.h \
-    skanowanie.h \
     zakupy.h \
     magazyn.h \
     kody.h \
     produkt_info.h \
     produkt_ilosc.h \
-    shopped_main.h
+    shopped_main.h \
+    wyswietl.h
 
 FORMS    += \
     settingswindow.ui \
-    skanowanie.ui \
     zakupy.ui \
     magazyn.ui \
     kody.ui \

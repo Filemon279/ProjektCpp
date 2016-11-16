@@ -4,6 +4,8 @@
 #include "bazadanych.h"
 #include <QDialog>
 #include "QTableWidgetItem"
+#include <QKeyEvent>
+#include <QGraphicsScene>
 
 namespace Ui {
 class Magazyn;
@@ -22,6 +24,7 @@ private:
     void odswiezBaze();
     int Columns;
     int Rows;
+    QGraphicsScene *viewScene;
     QList<QTableWidgetItem *> allItems;
     void deleteRecord();
     void addRecord();
@@ -29,12 +32,13 @@ private:
     int VAT_COLUMN;
     int BRUTTO_COLUMN;
     int NETTO_COLUMN;
+  //  void showEvent(QShowEvent *);
 
 
 
 private slots:
     void receiveBaza(QSqlDatabase Baza);
-
+    void keyPressEvent(QKeyEvent* e);
     void on_pushButton_add_clicked();
     void on_pushButton_delete_clicked();
     void on_pushButton_save_clicked();
@@ -43,6 +47,7 @@ private slots:
     void on_pushButton_down_clicked();
     void on_Asortyment_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
     void on_Asortyment_cellChanged(int row, int column);
+
 };
 
 
