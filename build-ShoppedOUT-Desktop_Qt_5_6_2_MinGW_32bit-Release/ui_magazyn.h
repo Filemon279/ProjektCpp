@@ -33,7 +33,13 @@ class Ui_Magazyn
 public:
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_2;
+    QLineEdit *lineEdit_szukaj;
     QTableWidget *Asortyment;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *label_nieZnaleziono;
+    QPushButton *pushButton_dodajProdukt;
     QLabel *label_info;
     QVBoxLayout *verticalLayout;
     wyswietl *graphicsView;
@@ -54,10 +60,7 @@ public:
     QPushButton *pushButton_4;
     QWidget *tab_3;
     QGridLayout *gridLayout_2;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
-    QLabel *label;
+    QPushButton *pushButton_dodaj_nowy;
 
     void setupUi(QDialog *Magazyn)
     {
@@ -71,12 +74,42 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(10, 20, 10, 20);
-        Asortyment = new QTableWidget(Magazyn);
-        Asortyment->setObjectName(QStringLiteral("Asortyment"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        label_2 = new QLabel(Magazyn);
+        label_2->setObjectName(QStringLiteral("label_2"));
         QFont font;
         font.setFamily(QStringLiteral("Arial"));
         font.setPointSize(12);
-        Asortyment->setFont(font);
+        font.setBold(true);
+        font.setWeight(75);
+        label_2->setFont(font);
+        label_2->setStyleSheet(QStringLiteral("color:white"));
+
+        horizontalLayout->addWidget(label_2);
+
+        lineEdit_szukaj = new QLineEdit(Magazyn);
+        lineEdit_szukaj->setObjectName(QStringLiteral("lineEdit_szukaj"));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(20);
+        font1.setBold(true);
+        font1.setWeight(75);
+        lineEdit_szukaj->setFont(font1);
+        lineEdit_szukaj->setStyleSheet(QStringLiteral("background-color: rgba(0, 0, 0, 90);color:white"));
+        lineEdit_szukaj->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout->addWidget(lineEdit_szukaj);
+
+
+        verticalLayout_2->addLayout(horizontalLayout);
+
+        Asortyment = new QTableWidget(Magazyn);
+        Asortyment->setObjectName(QStringLiteral("Asortyment"));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(12);
+        Asortyment->setFont(font2);
         Asortyment->setStyleSheet(QLatin1String("gridline-color: white; \n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 126, 255, 255));\n"
 "background-image: url(:/img/Img/white_40_small.png);\n"
@@ -90,14 +123,35 @@ public:
 
         verticalLayout_2->addWidget(Asortyment);
 
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        label_nieZnaleziono = new QLabel(Magazyn);
+        label_nieZnaleziono->setObjectName(QStringLiteral("label_nieZnaleziono"));
+        label_nieZnaleziono->setFont(font1);
+        label_nieZnaleziono->setStyleSheet(QStringLiteral("color:red;background-color: rgba(0,0,0,100);"));
+        label_nieZnaleziono->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_3->addWidget(label_nieZnaleziono);
+
+        pushButton_dodajProdukt = new QPushButton(Magazyn);
+        pushButton_dodajProdukt->setObjectName(QStringLiteral("pushButton_dodajProdukt"));
+        pushButton_dodajProdukt->setMinimumSize(QSize(0, 80));
+        pushButton_dodajProdukt->setFont(font);
+        pushButton_dodajProdukt->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(61, 196, 47, 255), stop:1 rgba(23, 88, 0, 255));color:white"));
+
+        verticalLayout_3->addWidget(pushButton_dodajProdukt);
+
+
+        verticalLayout_2->addLayout(verticalLayout_3);
+
         label_info = new QLabel(Magazyn);
         label_info->setObjectName(QStringLiteral("label_info"));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(14);
-        font1.setBold(true);
-        font1.setWeight(75);
-        label_info->setFont(font1);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(14);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label_info->setFont(font3);
         label_info->setStyleSheet(QStringLiteral("background-color: rgba(0, 0, 0, 100);"));
 
         verticalLayout_2->addWidget(label_info);
@@ -135,12 +189,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButton_down->sizePolicy().hasHeightForWidth());
         pushButton_down->setSizePolicy(sizePolicy);
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(12);
-        font2.setBold(true);
-        font2.setWeight(75);
-        pushButton_down->setFont(font2);
+        pushButton_down->setFont(font);
         pushButton_down->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));"));
 
         gridLayout_3->addWidget(pushButton_down, 1, 0, 1, 1);
@@ -152,7 +201,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(pushButton_refresh->sizePolicy().hasHeightForWidth());
         pushButton_refresh->setSizePolicy(sizePolicy1);
-        pushButton_refresh->setFont(font2);
+        pushButton_refresh->setFont(font);
         pushButton_refresh->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
 
         gridLayout_3->addWidget(pushButton_refresh, 1, 1, 1, 1);
@@ -161,7 +210,7 @@ public:
         pushButton_save->setObjectName(QStringLiteral("pushButton_save"));
         sizePolicy1.setHeightForWidth(pushButton_save->sizePolicy().hasHeightForWidth());
         pushButton_save->setSizePolicy(sizePolicy1);
-        pushButton_save->setFont(font2);
+        pushButton_save->setFont(font);
         pushButton_save->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
 
         gridLayout_3->addWidget(pushButton_save, 1, 2, 1, 1);
@@ -170,7 +219,7 @@ public:
         pushButton_add->setObjectName(QStringLiteral("pushButton_add"));
         sizePolicy1.setHeightForWidth(pushButton_add->sizePolicy().hasHeightForWidth());
         pushButton_add->setSizePolicy(sizePolicy1);
-        pushButton_add->setFont(font2);
+        pushButton_add->setFont(font);
         pushButton_add->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
 
         gridLayout_3->addWidget(pushButton_add, 0, 1, 1, 1);
@@ -179,12 +228,12 @@ public:
         pushButton_up->setObjectName(QStringLiteral("pushButton_up"));
         sizePolicy1.setHeightForWidth(pushButton_up->sizePolicy().hasHeightForWidth());
         pushButton_up->setSizePolicy(sizePolicy1);
-        QFont font3;
-        font3.setFamily(QStringLiteral("FontAwesome"));
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setWeight(75);
-        pushButton_up->setFont(font3);
+        QFont font4;
+        font4.setFamily(QStringLiteral("FontAwesome"));
+        font4.setPointSize(12);
+        font4.setBold(true);
+        font4.setWeight(75);
+        pushButton_up->setFont(font4);
         pushButton_up->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));"));
 
         gridLayout_3->addWidget(pushButton_up, 0, 0, 1, 1);
@@ -193,7 +242,7 @@ public:
         pushButton_delete->setObjectName(QStringLiteral("pushButton_delete"));
         sizePolicy1.setHeightForWidth(pushButton_delete->sizePolicy().hasHeightForWidth());
         pushButton_delete->setSizePolicy(sizePolicy1);
-        pushButton_delete->setFont(font2);
+        pushButton_delete->setFont(font);
         pushButton_delete->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
 
         gridLayout_3->addWidget(pushButton_delete, 0, 2, 1, 1);
@@ -207,7 +256,7 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy1);
-        pushButton->setFont(font2);
+        pushButton->setFont(font);
         pushButton->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(159, 255, 106, 255), stop:0.994318 rgba(30, 30, 30, 255));"));
 
         gridLayout_4->addWidget(pushButton, 0, 1, 1, 1);
@@ -216,7 +265,7 @@ public:
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
         pushButton_2->setSizePolicy(sizePolicy1);
-        pushButton_2->setFont(font2);
+        pushButton_2->setFont(font);
         pushButton_2->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(159, 255, 106, 255), stop:0.994318 rgba(30, 30, 30, 255));"));
 
         gridLayout_4->addWidget(pushButton_2, 0, 0, 1, 1);
@@ -225,7 +274,7 @@ public:
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy1);
-        pushButton_3->setFont(font2);
+        pushButton_3->setFont(font);
         pushButton_3->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(159, 255, 106, 255), stop:0.994318 rgba(30, 30, 30, 255));"));
 
         gridLayout_4->addWidget(pushButton_3, 1, 0, 1, 1);
@@ -234,7 +283,7 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy1);
-        pushButton_4->setFont(font2);
+        pushButton_4->setFont(font);
         pushButton_4->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(159, 255, 106, 255), stop:0.994318 rgba(30, 30, 30, 255));"));
 
         gridLayout_4->addWidget(pushButton_4, 1, 1, 1, 1);
@@ -244,44 +293,14 @@ public:
         tab_3->setObjectName(QStringLiteral("tab_3"));
         gridLayout_2 = new QGridLayout(tab_3);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        lineEdit = new QLineEdit(tab_3);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy2);
-        lineEdit->setMinimumSize(QSize(0, 50));
-        lineEdit->setStyleSheet(QStringLiteral("background-color: rgb(235, 235, 235);"));
+        pushButton_dodaj_nowy = new QPushButton(tab_3);
+        pushButton_dodaj_nowy->setObjectName(QStringLiteral("pushButton_dodaj_nowy"));
+        sizePolicy1.setHeightForWidth(pushButton_dodaj_nowy->sizePolicy().hasHeightForWidth());
+        pushButton_dodaj_nowy->setSizePolicy(sizePolicy1);
+        pushButton_dodaj_nowy->setFont(font3);
+        pushButton_dodaj_nowy->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
 
-        gridLayout_2->addWidget(lineEdit, 1, 0, 1, 2);
-
-        pushButton_5 = new QPushButton(tab_3);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        sizePolicy1.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
-        pushButton_5->setSizePolicy(sizePolicy1);
-        pushButton_5->setFont(font1);
-        pushButton_5->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
-
-        gridLayout_2->addWidget(pushButton_5, 2, 0, 1, 1);
-
-        pushButton_6 = new QPushButton(tab_3);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy1);
-        pushButton_6->setFont(font1);
-        pushButton_6->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));"));
-
-        gridLayout_2->addWidget(pushButton_6, 2, 1, 1, 1);
-
-        label = new QLabel(tab_3);
-        label->setObjectName(QStringLiteral("label"));
-        label->setFont(font1);
-        label->setStyleSheet(QLatin1String("COLOR:WHITE;\n"
-"background-color: rgb(0, 0, 0);"));
-        label->setAlignment(Qt::AlignCenter);
-
-        gridLayout_2->addWidget(label, 0, 0, 1, 2);
+        gridLayout_2->addWidget(pushButton_dodaj_nowy, 0, 0, 1, 1);
 
         tabWidget->addTab(tab_3, QString());
 
@@ -302,6 +321,10 @@ public:
     void retranslateUi(QDialog *Magazyn)
     {
         Magazyn->setWindowTitle(QApplication::translate("Magazyn", "Dialog", 0));
+        label_2->setText(QApplication::translate("Magazyn", "SZUKAJ:", 0));
+        lineEdit_szukaj->setText(QString());
+        label_nieZnaleziono->setText(QApplication::translate("Magazyn", "Nic nie znaleziono", 0));
+        pushButton_dodajProdukt->setText(QApplication::translate("Magazyn", "Dodaj produkt", 0));
         label_info->setText(QString());
         pushButton_down->setText(QApplication::translate("Magazyn", "[DOWN]", 0));
         pushButton_refresh->setText(QApplication::translate("Magazyn", "OD\305\232WIE\305\273 BAZ\304\230", 0));
@@ -315,10 +338,8 @@ public:
         pushButton_3->setText(QApplication::translate("Magazyn", "WYCZY\305\232\304\206 WSZYSTKO", 0));
         pushButton_4->setText(QApplication::translate("Magazyn", "PRZYPISZ WSZYSTKIM", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Magazyn", "Mapa Magazynu", 0));
-        pushButton_5->setText(QApplication::translate("Magazyn", "WYKONAJ", 0));
-        pushButton_6->setText(QApplication::translate("Magazyn", "WYCZY\305\232\304\206", 0));
-        label->setText(QApplication::translate("Magazyn", "MySQL Command Panel", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Magazyn", "SQL", 0));
+        pushButton_dodaj_nowy->setText(QApplication::translate("Magazyn", "DODAJ NOWY PRODUKT", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Magazyn", "Dodaj", 0));
     } // retranslateUi
 
 };

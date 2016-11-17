@@ -26,12 +26,15 @@ private:
     int Rows;
     QGraphicsScene *viewScene;
     QList<QTableWidgetItem *> allItems;
+    bool needToSave;
     void deleteRecord();
     void addRecord();
     void zapiszBaze();
     int VAT_COLUMN;
     int BRUTTO_COLUMN;
     int NETTO_COLUMN;
+    int LOKALIZACJA_COLUMN;
+    void showGPS();
   //  void showEvent(QShowEvent *);
 
 
@@ -46,8 +49,15 @@ private slots:
     void on_pushButton_up_clicked();
     void on_pushButton_down_clicked();
     void on_Asortyment_currentCellChanged(int currentRow, int currentColumn, int previousRow, int previousColumn);
-    void on_Asortyment_cellChanged(int row, int column);
 
+
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+
+    void on_Asortyment_clicked(const QModelIndex &index);
+    void on_lineEdit_szukaj_textChanged(const QString &arg1);
+    void on_pushButton_dodajProdukt_clicked();
+    void on_Asortyment_cellChanged(int row, int column);
 };
 
 

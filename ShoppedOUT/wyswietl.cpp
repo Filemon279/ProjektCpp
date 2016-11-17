@@ -1,33 +1,93 @@
 #include "wyswietl.h"
-#include <QLabel>
-#include <QMovie>
+
 
 wyswietl::wyswietl(QWidget *parent):
     QGraphicsView(parent)
 {
 
+
 }
+
+
 
 void wyswietl::mousePressEvent(QMouseEvent * e)
     {
     double rad = 1;
-  //  QString a = scene->width() + " = "+this->scene->width()
-  //  qDebug(scene->)
-    QPointF pt = mapToScene(e->pos());
-           scene->addEllipse(pt.x()-rad, pt.y()-rad, rad*2.0, rad*2.0,
-               QPen(), QBrush(Qt::SolidPattern));
-
-
-           QLabel *gif_anim = new QLabel();
-           QMovie *movie = new QMovie(":/img/Img/gps.gif");
+    if(running)
+    {
+        proxy->deleteLater();
+    }
+    running=1;
+           pt = mapToScene(e->pos());
+          // scene->addEllipse(pt.x()-rad, pt.y()-rad, rad*2.0, rad*2.0,
+          // QPen(), QBrush(Qt::SolidPattern));
+           gif_anim = new QLabel();
+           movie = new QMovie(":/img/Img/gps.gif");
            gif_anim->setMovie(movie);
            movie->start();
-           QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
-            proxy->setPos(pt.x()-rad,pt.y()-rad);
 
-
+           gif_anim->setAttribute( Qt::WA_TranslucentBackground, true );
+           proxy = scene->addWidget(gif_anim);
+           proxy->setPos(pt.x()-gif_anim->width()/2,pt.y()-gif_anim->height()/2);
     }
 
+int wyswietl::xGPS()
+{
+    if(running)
+    {
+    return pt.x();
+    }
+    else return 0;
+}
+
+void wyswietl::runSolo()
+{
+    if(running) return;
+    running = 1;
+    gif_anim = new QLabel();
+    movie = new QMovie(":/img/Img/gps.gif");
+    gif_anim->setMovie(movie);
+    movie->start();
+    gif_anim->setAttribute( Qt::WA_TranslucentBackground, true );
+    proxy = scene->addWidget(gif_anim);
+}
+
+int wyswietl::yGPS()
+{
+    if(running)
+    {
+    return pt.y();
+    }
+    else return 0;
+}
+
+void wyswietl::stopMovie()
+{
+    if(running) movie->stop();
+}
+
+
+void wyswietl::deleteGPS()
+{
+    if(running)
+    {
+        proxy->deleteLater();
+        running = 0;
+    }
+}
+
+bool wyswietl::isRunning()
+{
+return running;
+}
+
+void wyswietl::setGpsPosition(int x,int y)
+{
+    if(!running) runSolo();
+    pt = mapToScene(x,y);
+    proxy->setPos(pt.x()-gif_anim->width()/2,pt.y()-gif_anim->height()/2);
+
+}
 
 void wyswietl::showEvent(QShowEvent *) {
     int width = this->width();
