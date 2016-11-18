@@ -9,6 +9,7 @@ INPUT(
 ./release\produkt_ilosc.o
 ./release\shopped_main.o
 ./release\wyswietl.o
+./release\shopped_podlicz.o
 ./release\qrc_resource.o
 ./release\moc_settingswindow.o
 ./release\moc_zakupy.o
@@ -18,4 +19,5 @@ INPUT(
 ./release\moc_produkt_ilosc.o
 ./release\moc_shopped_main.o
 ./release\moc_wyswietl.o
+./release\moc_shopped_podlicz.o
 );

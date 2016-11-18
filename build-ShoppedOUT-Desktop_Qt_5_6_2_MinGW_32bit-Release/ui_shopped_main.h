@@ -37,7 +37,7 @@ public:
     {
         if (Shopped_main->objectName().isEmpty())
             Shopped_main->setObjectName(QStringLiteral("Shopped_main"));
-        Shopped_main->resize(981, 488);
+        Shopped_main->resize(981, 596);
         Shopped_main->setStyleSheet(QStringLiteral("#Shopped_main {border-image: url(:/img/Img/bg_dark_logo.jpg);}"));
         gridLayout = new QGridLayout(Shopped_main);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));

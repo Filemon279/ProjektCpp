@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     produkt_info.cpp \
     produkt_ilosc.cpp \
     shopped_main.cpp \
-    wyswietl.cpp
+    wyswietl.cpp \
+    shopped_podlicz.cpp
 
 HEADERS  += \
     settingswindow.h \
@@ -33,7 +34,8 @@ HEADERS  += \
     produkt_info.h \
     produkt_ilosc.h \
     shopped_main.h \
-    wyswietl.h
+    wyswietl.h \
+    shopped_podlicz.h
 
 FORMS    += \
     settingswindow.ui \
@@ -42,7 +44,8 @@ FORMS    += \
     kody.ui \
     produkt_info.ui \
     produkt_ilosc.ui \
-    shopped_main.ui
+    shopped_main.ui \
+    shopped_podlicz.ui
 
 RESOURCES += \
     resource.qrc

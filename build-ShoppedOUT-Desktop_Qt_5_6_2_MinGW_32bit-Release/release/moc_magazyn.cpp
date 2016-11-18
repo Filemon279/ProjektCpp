@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Magazyn_t {
-    QByteArrayData data[29];
-    char stringdata0[497];
+    QByteArrayData data[33];
+    char stringdata0[581];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -57,7 +57,11 @@ QT_MOC_LITERAL(24, 420, 4), // "arg1"
 QT_MOC_LITERAL(25, 425, 34), // "on_pushButton_dodajProdukt_cl..."
 QT_MOC_LITERAL(26, 460, 25), // "on_Asortyment_cellChanged"
 QT_MOC_LITERAL(27, 486, 3), // "row"
-QT_MOC_LITERAL(28, 490, 6) // "column"
+QT_MOC_LITERAL(28, 490, 6), // "column"
+QT_MOC_LITERAL(29, 497, 25), // "on_Asortyment_itemChanged"
+QT_MOC_LITERAL(30, 523, 17), // "QTableWidgetItem*"
+QT_MOC_LITERAL(31, 541, 4), // "item"
+QT_MOC_LITERAL(32, 546, 34) // "on_Asortyment_itemSelectionCh..."
 
     },
     "Magazyn\0receiveBaza\0\0QSqlDatabase\0"
@@ -74,7 +78,9 @@ QT_MOC_LITERAL(28, 490, 6) // "column"
     "on_pushButton_2_clicked\0on_Asortyment_clicked\0"
     "index\0on_lineEdit_szukaj_textChanged\0"
     "arg1\0on_pushButton_dodajProdukt_clicked\0"
-    "on_Asortyment_cellChanged\0row\0column"
+    "on_Asortyment_cellChanged\0row\0column\0"
+    "on_Asortyment_itemChanged\0QTableWidgetItem*\0"
+    "item\0on_Asortyment_itemSelectionChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,7 +90,7 @@ static const uint qt_meta_data_Magazyn[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -92,21 +98,23 @@ static const uint qt_meta_data_Magazyn[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   89,    2, 0x08 /* Private */,
-       5,    1,   92,    2, 0x08 /* Private */,
-       8,    0,   95,    2, 0x08 /* Private */,
-       9,    0,   96,    2, 0x08 /* Private */,
-      10,    0,   97,    2, 0x08 /* Private */,
-      11,    0,   98,    2, 0x08 /* Private */,
-      12,    0,   99,    2, 0x08 /* Private */,
-      13,    0,  100,    2, 0x08 /* Private */,
-      14,    4,  101,    2, 0x08 /* Private */,
-      19,    0,  110,    2, 0x08 /* Private */,
-      20,    0,  111,    2, 0x08 /* Private */,
-      21,    1,  112,    2, 0x08 /* Private */,
-      23,    1,  115,    2, 0x08 /* Private */,
-      25,    0,  118,    2, 0x08 /* Private */,
-      26,    2,  119,    2, 0x08 /* Private */,
+       1,    1,   99,    2, 0x08 /* Private */,
+       5,    1,  102,    2, 0x08 /* Private */,
+       8,    0,  105,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    0,  107,    2, 0x08 /* Private */,
+      11,    0,  108,    2, 0x08 /* Private */,
+      12,    0,  109,    2, 0x08 /* Private */,
+      13,    0,  110,    2, 0x08 /* Private */,
+      14,    4,  111,    2, 0x08 /* Private */,
+      19,    0,  120,    2, 0x08 /* Private */,
+      20,    0,  121,    2, 0x08 /* Private */,
+      21,    1,  122,    2, 0x08 /* Private */,
+      23,    1,  125,    2, 0x08 /* Private */,
+      25,    0,  128,    2, 0x08 /* Private */,
+      26,    2,  129,    2, 0x08 /* Private */,
+      29,    1,  134,    2, 0x08 /* Private */,
+      32,    0,  137,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -124,6 +132,8 @@ static const uint qt_meta_data_Magazyn[] = {
     QMetaType::Void, QMetaType::QString,   24,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   27,   28,
+    QMetaType::Void, 0x80000000 | 30,   31,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -149,6 +159,8 @@ void Magazyn::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 12: _t->on_lineEdit_szukaj_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 13: _t->on_pushButton_dodajProdukt_clicked(); break;
         case 14: _t->on_Asortyment_cellChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 15: _t->on_Asortyment_itemChanged((*reinterpret_cast< QTableWidgetItem*(*)>(_a[1]))); break;
+        case 16: _t->on_Asortyment_itemSelectionChanged(); break;
         default: ;
         }
     }
@@ -179,13 +191,13 @@ int Magazyn::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 17)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 17;
     }
     return _id;
 }

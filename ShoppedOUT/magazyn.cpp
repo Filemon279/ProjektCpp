@@ -69,8 +69,11 @@ void Magazyn::keyPressEvent(QKeyEvent* e)
       {
           if(needToSave)
           {
-             if(! message_box("UWAGA","Kilka zmian zostało niezapisanych, czy na pewno chcesz zamknąć magazyn?",this)) return;
+             int odp = message_box("UWAGA","Czy chcesz zapisać zmiany przed zamknięciem?",this);
+             if(odp==2) return;
+             else if(odp==1) zapiszBaze();
           }
+         needToSave=false;
         ui->graphicsView->stopMovie();
         this->close();
       }
@@ -141,11 +144,13 @@ void Magazyn::odswiezBaze()
 {
     if(needToSave)
     {
-       if(!message_box("UWAGA","Kilka zmian zostało niezapisanych, czy na pewno chcesz odświeżyć bazę?",this)) return;
+       int odp = message_box("UWAGA","Czy chcesz zapisać zmiany przed odświeżeniem bazy?",this);
+       if(odp==2) return;
+       else if(odp==1) zapiszBaze();
+
 
     }
     QSqlQuery query("SELECT * FROM asortyment");
-
 
       ui->Asortyment->setColumnCount(Rows=query.record().count()-1); // pomijamy ID, indeksuje nam iterator
       ui->Asortyment->setRowCount(Columns=query.size());
@@ -283,18 +288,19 @@ void Magazyn::on_Asortyment_currentCellChanged(int currentRow, int currentColumn
 {
 
     QString out="";
-    out.append("Zmieniono R: ");
-    out.append(QString::number(currentRow));
-    out.append(" C:");
-    out.append(QString::number(currentColumn));
-   ui->label_info->setText(out);
+ //   out.append("Zmieniono R: ");
+ //   out.append(QString::number(currentRow));
+ //   out.append(" C:");
+ //   out.append(QString::number(currentColumn));
+ //  ui->label_info->setText(out);
    float VAT = ui->Asortyment->item(currentRow,VAT_COLUMN)->text().toFloat();
    float NETTO = ui->Asortyment->item(currentRow,NETTO_COLUMN)->text().toFloat();
    float BRUTTO = NETTO+(NETTO*(VAT/100));
+   if(ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->text()==QString::number(BRUTTO)) return;
    ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & Qt::ItemIsSelectable); // BRUTTO NIE JEST ZMIENIALNA
    ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setText(QString::number(BRUTTO,'f',2));
    ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->setFlags( ui->Asortyment->item(currentRow,BRUTTO_COLUMN)->flags() & ~Qt::ItemIsEditable); // BRUTTO NIE JEST ZMIENIALNA
-showGPS();
+
 }
 
 
@@ -335,7 +341,7 @@ void Magazyn::showGPS()
     if(ui->Asortyment->selectedItems().length()>0)
     {
     QString pozycja = ui->Asortyment->item(ui->Asortyment->currentRow(),ui->Asortyment->columnCount()-1)->text();
-    qDebug(pozycja.toUtf8());
+    //qDebug(pozycja.toUtf8());
     QStringList coordinates = pozycja.split( "-" );
     if(coordinates.length()!=2) return;
     else
@@ -363,8 +369,6 @@ void Magazyn::showGPS()
 
 void Magazyn::on_lineEdit_szukaj_textChanged(const QString &arg1)
 {
-
-
    QList<QTableWidgetItem *> items = ui->Asortyment->findItems(arg1,Qt::MatchContains);
        for(int i = 0; i < allItems.count(); i++) ui->Asortyment->hideRow(allItems.at(i)->row());
        for(int i = 0; i < items.count(); i++) ui->Asortyment->showRow(items.at(i)->row());
@@ -379,8 +383,6 @@ void Magazyn::on_lineEdit_szukaj_textChanged(const QString &arg1)
         ui->label_nieZnaleziono->hide();
         ui->pushButton_dodajProdukt->hide();
     }
-
-
 }
 
 void Magazyn::on_pushButton_dodajProdukt_clicked()
@@ -411,5 +413,16 @@ void Magazyn::on_pushButton_dodajProdukt_clicked()
 
 void Magazyn::on_Asortyment_cellChanged(int row, int column)
 {
-     needToSave=true;
+
+}
+
+void Magazyn::on_Asortyment_itemChanged(QTableWidgetItem *item)
+{
+needToSave=true;
+
+}
+
+void Magazyn::on_Asortyment_itemSelectionChanged()
+{
+    showGPS();
 }

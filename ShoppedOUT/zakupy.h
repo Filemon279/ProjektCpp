@@ -6,6 +6,7 @@
 #include "produkt_info.h"
 #include "produkt_ilosc.h"
 #include <QKeyEvent>
+#include "shopped_podlicz.h"
 
 namespace Ui {
 class Zakupy;
@@ -70,6 +71,8 @@ private slots:
 
 
 
+    void on_pushButton_zaplac_clicked();
+
 private:
     Ui::Zakupy *ui;
     produkt_info *info;
@@ -78,6 +81,7 @@ private:
     QString polecenie;
     int ilosc = 0;
     int index=0 ;
+    Shopped_podlicz *podlicz;
     void enterAction();
     void podlicz_cene();
     QSqlDatabase BazaIN;
@@ -85,6 +89,7 @@ private:
 signals:
     void send_productKey(QString);
     void sendBaza(QSqlDatabase);
+    void sendCash(float);
 };
 
 #endif // ZAKUPY_H

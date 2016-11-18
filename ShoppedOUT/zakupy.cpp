@@ -448,3 +448,18 @@ podlicz_cene();
 }
 
 
+
+void Zakupy::on_pushButton_zaplac_clicked()
+{
+    QString cena = ui->label_Brutto->text();
+    cena.chop(2);
+    float brutto = cena.toFloat();
+    qDebug(ui->label_Brutto->text().toUtf8());
+    qDebug(QString::number(brutto).toUtf8());
+    if(brutto<=0) return;
+    podlicz = new Shopped_podlicz(this);
+    podlicz->setModal(true);
+    connect(this,SIGNAL(sendCash(float)),  podlicz,SLOT(getCash(float)));
+    emit sendCash(brutto);
+    podlicz->exec();
+}

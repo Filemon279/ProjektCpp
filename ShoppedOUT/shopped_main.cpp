@@ -7,6 +7,7 @@ Shopped_main::Shopped_main(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
 }
 
 Shopped_main::~Shopped_main()

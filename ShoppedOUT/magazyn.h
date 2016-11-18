@@ -58,6 +58,8 @@ private slots:
     void on_lineEdit_szukaj_textChanged(const QString &arg1);
     void on_pushButton_dodajProdukt_clicked();
     void on_Asortyment_cellChanged(int row, int column);
+    void on_Asortyment_itemChanged(QTableWidgetItem *item);
+    void on_Asortyment_itemSelectionChanged();
 };
 
 
