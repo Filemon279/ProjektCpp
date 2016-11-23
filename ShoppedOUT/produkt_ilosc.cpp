@@ -16,5 +16,6 @@ produkt_ilosc::~produkt_ilosc()
 void produkt_ilosc::on_pushButton_clicked()
 {
     emit send_ilosc(ui->lineEdit->text().toInt());
+
     this->close();
 }

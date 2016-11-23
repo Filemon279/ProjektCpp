@@ -289,7 +289,6 @@ color:white
               </widget>
              </item>
             </layout>
-            <zorder>label_5</zorder>
             <zorder>label_Brutto</zorder>
             <zorder>label_2</zorder>
             <zorder>label_7</zorder>
@@ -393,6 +392,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color: white
@@ -430,6 +432,9 @@ color: white
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
@@ -469,6 +474,9 @@ color: white
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));
 color: white
@@ -506,6 +514,9 @@ color: white
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
@@ -545,6 +556,9 @@ color: white
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -581,6 +595,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));
@@ -619,6 +636,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));
 color:white;</string>
@@ -655,6 +675,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
@@ -693,6 +716,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -729,6 +755,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
@@ -767,6 +796,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -803,6 +835,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));
@@ -841,6 +876,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -877,6 +915,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));
@@ -915,6 +956,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -951,6 +995,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
@@ -1016,6 +1063,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));
 color:white;</string>
@@ -1053,6 +1103,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));
 color:white;</string>
@@ -1089,6 +1142,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(44, 43, 156, 255), stop:1 rgba(138, 147, 255, 255));
@@ -1128,6 +1184,9 @@ color:white;</string>
                <bold>true</bold>
               </font>
              </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));
 color:white;</string>
@@ -1152,6 +1211,9 @@ color:white;</string>
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">color:white;

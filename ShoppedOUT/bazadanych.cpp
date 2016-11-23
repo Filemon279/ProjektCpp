@@ -7,10 +7,10 @@ bazadanych::bazadanych()
 
  baza=false;
  db = QSqlDatabase::addDatabase("QMYSQL");
- db.setHostName("127.0.0.1");
- db.setDatabaseName("sklep");
- db.setUserName("root");
- db.setPassword("root");
+ db.setHostName("188.128.191.115");
+ db.setDatabaseName("22192901_shopped");
+ db.setUserName("22192901_shopped");
+ db.setPassword("!issp2016");
 }
 
 extern int message_box(QString title, QString message, QWidget *widget)

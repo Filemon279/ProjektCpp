@@ -1,7 +1,6 @@
 #include <QApplication>
 #include "shopped_main.h"
 
-
 int main(int argc, char *argv[])
 {
 

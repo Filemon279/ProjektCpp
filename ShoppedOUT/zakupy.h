@@ -23,6 +23,7 @@ public:
     ~Zakupy();
 
 private slots:
+    void getStatusNext(QString info);
     void receiveBaza(QSqlDatabase Baza);
 
     void on_pushButton_nr7_clicked();
@@ -72,6 +73,8 @@ private slots:
 
 
     void on_pushButton_zaplac_clicked();
+
+    void on_zakubyTable_activated(const QModelIndex &index);
 
 private:
     Ui::Zakupy *ui;

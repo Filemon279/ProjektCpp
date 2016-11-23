@@ -10,6 +10,7 @@ INPUT(
 ./debug\shopped_main.o
 ./debug\wyswietl.o
 ./debug\shopped_podlicz.o
+./debug\shopped_platnosc.o
 ./debug\qrc_resource.o
 ./debug\moc_settingswindow.o
 ./debug\moc_zakupy.o
@@ -20,4 +21,5 @@ INPUT(
 ./debug\moc_shopped_main.o
 ./debug\moc_wyswietl.o
 ./debug\moc_shopped_podlicz.o
+./debug\moc_shopped_platnosc.o
 );

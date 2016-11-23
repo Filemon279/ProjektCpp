@@ -1,5 +1,7 @@
 #include "shopped_podlicz.h"
 #include "ui_shopped_podlicz.h"
+#include <QFuture>
+#include <QtConcurrent/QtConcurrentRun>
 
 Shopped_podlicz::Shopped_podlicz(QWidget *parent) :
     QDialog(parent),
@@ -50,3 +52,22 @@ void Shopped_podlicz::on_lineEdit_zaplacono_textChanged(const QString &arg1)
     }
     ui->label_reszta->setText(QString::number(wydac,'f',2));
 }
+
+void Shopped_podlicz::on_pushButton_karta_clicked()
+{
+    platnosc = new shopped_platnosc(this);
+    platnosc->setModal(true);
+    connect(this,SIGNAL(sendInfo(QString)),  platnosc,SLOT(getInfo(QString)));
+    connect(platnosc,SIGNAL(sendStatus(QString)),  this,SLOT(getStatus(QString)));
+    emit sendInfo("karta");
+    platnosc->exec();
+}
+
+void Shopped_podlicz::getStatus(QString info)
+{
+    if (info=="done"){
+ emit sendStatusNext("done");
+        this->close();
+          }
+}
+

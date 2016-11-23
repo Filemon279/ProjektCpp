@@ -29,7 +29,6 @@ public:
     QGridLayout *gridLayout_2;
     QSpacerItem *horizontalSpacer_2;
     QLabel *label;
-    QPushButton *pushButton_3;
     QLineEdit *lineEdit_zaplacono;
     QLabel *label_3;
     QPushButton *pushButton_gotowka;
@@ -49,7 +48,7 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_2->addItem(horizontalSpacer_2, 2, 0, 1, 1);
+        gridLayout_2->addItem(horizontalSpacer_2, 1, 0, 1, 1);
 
         label = new QLabel(Shopped_podlicz);
         label->setObjectName(QStringLiteral("label"));
@@ -67,32 +66,19 @@ public:
         label->setStyleSheet(QStringLiteral("color:white"));
         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_2->addWidget(label, 1, 0, 1, 2);
-
-        pushButton_3 = new QPushButton(Shopped_podlicz);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setMinimumSize(QSize(0, 30));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Arial"));
-        font1.setPointSize(12);
-        font1.setBold(true);
-        font1.setWeight(75);
-        pushButton_3->setFont(font1);
-        pushButton_3->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(39, 21, 10, 255));color:white"));
-
-        gridLayout_2->addWidget(pushButton_3, 0, 1, 1, 2);
+        gridLayout_2->addWidget(label, 0, 0, 1, 2);
 
         lineEdit_zaplacono = new QLineEdit(Shopped_podlicz);
         lineEdit_zaplacono->setObjectName(QStringLiteral("lineEdit_zaplacono"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        font2.setPointSize(14);
-        lineEdit_zaplacono->setFont(font2);
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial"));
+        font1.setPointSize(14);
+        lineEdit_zaplacono->setFont(font1);
         lineEdit_zaplacono->setStyleSheet(QLatin1String("color:white;\n"
 "background-color: rgba(0, 0, 0, 150);"));
         lineEdit_zaplacono->setMaxLength(9);
 
-        gridLayout_2->addWidget(lineEdit_zaplacono, 2, 1, 1, 2);
+        gridLayout_2->addWidget(lineEdit_zaplacono, 1, 1, 1, 2);
 
         label_3 = new QLabel(Shopped_podlicz);
         label_3->setObjectName(QStringLiteral("label_3"));
@@ -102,60 +88,60 @@ public:
         label_3->setStyleSheet(QStringLiteral("color:white"));
         label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_2->addWidget(label_3, 3, 0, 1, 2);
+        gridLayout_2->addWidget(label_3, 2, 0, 1, 2);
 
         pushButton_gotowka = new QPushButton(Shopped_podlicz);
         pushButton_gotowka->setObjectName(QStringLiteral("pushButton_gotowka"));
         pushButton_gotowka->setMinimumSize(QSize(0, 50));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Arial"));
-        font3.setPointSize(14);
-        font3.setBold(true);
-        font3.setWeight(75);
-        pushButton_gotowka->setFont(font3);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setWeight(75);
+        pushButton_gotowka->setFont(font2);
         pushButton_gotowka->setStyleSheet(QLatin1String("color:white;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(61, 196, 47, 255), stop:1 rgba(23, 88, 0, 255))"));
 
-        gridLayout_2->addWidget(pushButton_gotowka, 5, 2, 1, 2);
+        gridLayout_2->addWidget(pushButton_gotowka, 4, 2, 1, 2);
 
         label_dozaplaty = new QLabel(Shopped_podlicz);
         label_dozaplaty->setObjectName(QStringLiteral("label_dozaplaty"));
         sizePolicy.setHeightForWidth(label_dozaplaty->sizePolicy().hasHeightForWidth());
         label_dozaplaty->setSizePolicy(sizePolicy);
-        QFont font4;
-        font4.setFamily(QStringLiteral("Arial"));
-        font4.setPointSize(16);
-        label_dozaplaty->setFont(font4);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Arial"));
+        font3.setPointSize(16);
+        label_dozaplaty->setFont(font3);
         label_dozaplaty->setStyleSheet(QStringLiteral("color:white"));
 
-        gridLayout_2->addWidget(label_dozaplaty, 1, 2, 1, 2);
+        gridLayout_2->addWidget(label_dozaplaty, 0, 2, 1, 2);
 
         label_reszta = new QLabel(Shopped_podlicz);
         label_reszta->setObjectName(QStringLiteral("label_reszta"));
         sizePolicy.setHeightForWidth(label_reszta->sizePolicy().hasHeightForWidth());
         label_reszta->setSizePolicy(sizePolicy);
-        QFont font5;
-        font5.setFamily(QStringLiteral("Arial"));
-        font5.setPointSize(20);
-        font5.setBold(true);
-        font5.setWeight(75);
-        label_reszta->setFont(font5);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Arial"));
+        font4.setPointSize(20);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_reszta->setFont(font4);
         label_reszta->setStyleSheet(QStringLiteral("color:white"));
 
-        gridLayout_2->addWidget(label_reszta, 3, 2, 1, 2);
+        gridLayout_2->addWidget(label_reszta, 2, 2, 1, 2);
 
         pushButton_karta = new QPushButton(Shopped_podlicz);
         pushButton_karta->setObjectName(QStringLiteral("pushButton_karta"));
         pushButton_karta->setMinimumSize(QSize(0, 50));
-        pushButton_karta->setFont(font3);
+        pushButton_karta->setFont(font2);
         pushButton_karta->setStyleSheet(QLatin1String("color:white;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(61, 196, 47, 255), stop:1 rgba(23, 88, 0, 255));"));
 
-        gridLayout_2->addWidget(pushButton_karta, 5, 0, 1, 2);
+        gridLayout_2->addWidget(pushButton_karta, 4, 0, 1, 2);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_2->addItem(horizontalSpacer, 2, 3, 1, 1);
+        gridLayout_2->addItem(horizontalSpacer, 1, 3, 1, 1);
 
 
         retranslateUi(Shopped_podlicz);
@@ -167,7 +153,6 @@ public:
     {
         Shopped_podlicz->setWindowTitle(QApplication::translate("Shopped_podlicz", "Dialog", 0));
         label->setText(QApplication::translate("Shopped_podlicz", "Do zap\305\202aty:", 0));
-        pushButton_3->setText(QApplication::translate("Shopped_podlicz", "Anuluj", 0));
         label_3->setText(QApplication::translate("Shopped_podlicz", "Reszta:", 0));
         pushButton_gotowka->setText(QApplication::translate("Shopped_podlicz", "Got\303\263wka", 0));
         label_dozaplaty->setText(QApplication::translate("Shopped_podlicz", "0.00z\305\202", 0));

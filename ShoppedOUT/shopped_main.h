@@ -7,6 +7,7 @@
 #include "zakupy.h"
 #include "magazyn.h"
 #include "kody.h"
+
 namespace Ui {
 class Shopped_main;
 }
@@ -23,6 +24,7 @@ public:
     Zakupy *zakupy;
     bazadanych Baza;
     Kody *kody;
+
 
 private slots:
     void on_magazynButton_clicked();

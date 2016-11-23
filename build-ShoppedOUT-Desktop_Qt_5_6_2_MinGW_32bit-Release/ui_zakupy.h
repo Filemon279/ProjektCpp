@@ -288,6 +288,7 @@ public:
         pushButton_nr7->setMinimumSize(QSize(0, 70));
         pushButton_nr7->setBaseSize(QSize(0, 0));
         pushButton_nr7->setFont(font4);
+        pushButton_nr7->setFocusPolicy(Qt::NoFocus);
         pushButton_nr7->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color: white\n"
 ""));
@@ -301,6 +302,7 @@ public:
         pushButton_nr8->setMinimumSize(QSize(0, 70));
         pushButton_nr8->setBaseSize(QSize(0, 0));
         pushButton_nr8->setFont(font4);
+        pushButton_nr8->setFocusPolicy(Qt::NoFocus);
         pushButton_nr8->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color: white\n"
 ""));
@@ -314,6 +316,7 @@ public:
         pushButton_escape->setMinimumSize(QSize(0, 70));
         pushButton_escape->setBaseSize(QSize(0, 0));
         pushButton_escape->setFont(font4);
+        pushButton_escape->setFocusPolicy(Qt::NoFocus);
         pushButton_escape->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color: white\n"
 ""));
@@ -327,6 +330,7 @@ public:
         pushButton_nr9->setMinimumSize(QSize(0, 70));
         pushButton_nr9->setBaseSize(QSize(0, 0));
         pushButton_nr9->setFont(font4);
+        pushButton_nr9->setFocusPolicy(Qt::NoFocus);
         pushButton_nr9->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color: white\n"
 ""));
@@ -340,6 +344,7 @@ public:
         pushButton_nr0->setMinimumSize(QSize(0, 70));
         pushButton_nr0->setBaseSize(QSize(0, 0));
         pushButton_nr0->setFont(font4);
+        pushButton_nr0->setFocusPolicy(Qt::NoFocus);
         pushButton_nr0->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -352,6 +357,7 @@ public:
         pushButton_down->setMinimumSize(QSize(0, 70));
         pushButton_down->setBaseSize(QSize(0, 0));
         pushButton_down->setFont(font4);
+        pushButton_down->setFocusPolicy(Qt::NoFocus);
         pushButton_down->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));\n"
 "color:white;"));
 
@@ -364,6 +370,7 @@ public:
         pushButton_up->setMinimumSize(QSize(0, 70));
         pushButton_up->setBaseSize(QSize(0, 0));
         pushButton_up->setFont(font4);
+        pushButton_up->setFocusPolicy(Qt::NoFocus);
         pushButton_up->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(93, 0, 165, 255), stop:1 rgba(168, 73, 255, 255));\n"
 "color:white;"));
 
@@ -376,6 +383,7 @@ public:
         pushButton_nr1->setMinimumSize(QSize(0, 70));
         pushButton_nr1->setBaseSize(QSize(0, 0));
         pushButton_nr1->setFont(font4);
+        pushButton_nr1->setFocusPolicy(Qt::NoFocus);
         pushButton_nr1->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -388,6 +396,7 @@ public:
         pushButton_nr3->setMinimumSize(QSize(0, 70));
         pushButton_nr3->setBaseSize(QSize(0, 0));
         pushButton_nr3->setFont(font4);
+        pushButton_nr3->setFocusPolicy(Qt::NoFocus);
         pushButton_nr3->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -400,6 +409,7 @@ public:
         pushButton_nr2->setMinimumSize(QSize(0, 70));
         pushButton_nr2->setBaseSize(QSize(0, 0));
         pushButton_nr2->setFont(font4);
+        pushButton_nr2->setFocusPolicy(Qt::NoFocus);
         pushButton_nr2->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -412,6 +422,7 @@ public:
         pushButton_nr5->setMinimumSize(QSize(0, 70));
         pushButton_nr5->setBaseSize(QSize(0, 0));
         pushButton_nr5->setFont(font4);
+        pushButton_nr5->setFocusPolicy(Qt::NoFocus);
         pushButton_nr5->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -424,6 +435,7 @@ public:
         pushButton_delete->setMinimumSize(QSize(0, 70));
         pushButton_delete->setBaseSize(QSize(0, 0));
         pushButton_delete->setFont(font4);
+        pushButton_delete->setFocusPolicy(Qt::NoFocus);
         pushButton_delete->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -436,6 +448,7 @@ public:
         pushButton_nr6->setMinimumSize(QSize(0, 70));
         pushButton_nr6->setBaseSize(QSize(0, 0));
         pushButton_nr6->setFont(font4);
+        pushButton_nr6->setFocusPolicy(Qt::NoFocus);
         pushButton_nr6->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -448,6 +461,7 @@ public:
         pushButton_clear->setMinimumSize(QSize(0, 70));
         pushButton_clear->setBaseSize(QSize(0, 0));
         pushButton_clear->setFont(font4);
+        pushButton_clear->setFocusPolicy(Qt::NoFocus);
         pushButton_clear->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -460,6 +474,7 @@ public:
         pushButton_nr4->setMinimumSize(QSize(0, 70));
         pushButton_nr4->setBaseSize(QSize(0, 0));
         pushButton_nr4->setFont(font4);
+        pushButton_nr4->setFocusPolicy(Qt::NoFocus);
         pushButton_nr4->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -472,6 +487,7 @@ public:
         pushButton_nr00->setMinimumSize(QSize(0, 70));
         pushButton_nr00->setBaseSize(QSize(0, 0));
         pushButton_nr00->setFont(font4);
+        pushButton_nr00->setFocusPolicy(Qt::NoFocus);
         pushButton_nr00->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -499,6 +515,7 @@ public:
         pushButton_przecinek->setMinimumSize(QSize(0, 70));
         pushButton_przecinek->setBaseSize(QSize(0, 0));
         pushButton_przecinek->setFont(font4);
+        pushButton_przecinek->setFocusPolicy(Qt::NoFocus);
         pushButton_przecinek->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.75, stop:0 rgba(109, 109, 109, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "color:white;"));
 
@@ -511,6 +528,7 @@ public:
         pushButton_zaplac->setMinimumSize(QSize(0, 70));
         pushButton_zaplac->setBaseSize(QSize(0, 0));
         pushButton_zaplac->setFont(font4);
+        pushButton_zaplac->setFocusPolicy(Qt::NoFocus);
         pushButton_zaplac->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(14, 146, 0, 255), stop:1 rgba(0, 255, 104, 255));\n"
 "color:white;"));
 
@@ -523,6 +541,7 @@ public:
         pushButton_enter->setMinimumSize(QSize(0, 70));
         pushButton_enter->setBaseSize(QSize(0, 0));
         pushButton_enter->setFont(font4);
+        pushButton_enter->setFocusPolicy(Qt::NoFocus);
         pushButton_enter->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(44, 43, 156, 255), stop:1 rgba(138, 147, 255, 255));\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(35, 34, 126, 255), stop:1 rgba(95, 106, 255, 255));\n"
 "color:white;"));
@@ -536,6 +555,7 @@ public:
         pushButton_ilosc->setMinimumSize(QSize(0, 70));
         pushButton_ilosc->setBaseSize(QSize(0, 0));
         pushButton_ilosc->setFont(font4);
+        pushButton_ilosc->setFocusPolicy(Qt::NoFocus);
         pushButton_ilosc->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 187, 0, 255), stop:1 rgba(182, 97, 46, 255));\n"
 "color:white;"));
 
@@ -549,6 +569,7 @@ public:
         sizePolicy6.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy6);
         pushButton->setFont(font4);
+        pushButton->setFocusPolicy(Qt::NoFocus);
         pushButton->setStyleSheet(QLatin1String("color:white;\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(61, 196, 47, 255), stop:1 rgba(23, 88, 0, 255));"));
 

@@ -29,6 +29,7 @@
         <file>Img/basket.png</file>
         <file>Img/basket_clicked.png</file>
         <file>Img/gps.gif</file>
+        <file>Img/waiting.gif</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/fre3of9x.ttf</file>

@@ -18,6 +18,7 @@ Shopped_main::~Shopped_main()
 
 void Shopped_main::on_magazynButton_clicked()
 {
+
     magazyn = new Magazyn(this);
     magazyn->setModal(true);
     connect(this,SIGNAL(sendBaza(QSqlDatabase)),  magazyn,SLOT(receiveBaza(QSqlDatabase)));

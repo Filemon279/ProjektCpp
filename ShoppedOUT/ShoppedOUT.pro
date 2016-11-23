@@ -13,6 +13,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = ShoppedOUT
 TEMPLATE = app
 
+QTPLUGIN+=qsqlmysql
+
 SOURCES += main.cpp\
     settingswindow.cpp \
     bazadanych.cpp \
@@ -23,7 +25,8 @@ SOURCES += main.cpp\
     produkt_ilosc.cpp \
     shopped_main.cpp \
     wyswietl.cpp \
-    shopped_podlicz.cpp
+    shopped_podlicz.cpp \
+    shopped_platnosc.cpp
 
 HEADERS  += \
     settingswindow.h \
@@ -35,7 +38,8 @@ HEADERS  += \
     produkt_ilosc.h \
     shopped_main.h \
     wyswietl.h \
-    shopped_podlicz.h
+    shopped_podlicz.h \
+    shopped_platnosc.h
 
 FORMS    += \
     settingswindow.ui \
@@ -45,7 +49,9 @@ FORMS    += \
     produkt_info.ui \
     produkt_ilosc.ui \
     shopped_main.ui \
-    shopped_podlicz.ui
+    shopped_podlicz.ui \
+    shopped_platnosc.ui
+
 
 RESOURCES += \
     resource.qrc

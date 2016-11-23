@@ -20,6 +20,7 @@ private:
 
 signals:
     send_ilosc(int);
+
 private slots:
     void on_pushButton_clicked();
 };

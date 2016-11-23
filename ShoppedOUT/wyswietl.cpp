@@ -22,7 +22,9 @@ void wyswietl::mousePressEvent(QMouseEvent * e)
           // scene->addEllipse(pt.x()-rad, pt.y()-rad, rad*2.0, rad*2.0,
           // QPen(), QBrush(Qt::SolidPattern));
            gif_anim = new QLabel();
+
            movie = new QMovie(":/img/Img/gps.gif");
+            movie->setScaledSize(QSize(60,60));
            gif_anim->setMovie(movie);
            movie->start();
 
@@ -46,6 +48,7 @@ void wyswietl::runSolo()
     running = 1;
     gif_anim = new QLabel();
     movie = new QMovie(":/img/Img/gps.gif");
+    movie->setScaledSize(QSize(60,60));
     gif_anim->setMovie(movie);
     movie->start();
     gif_anim->setAttribute( Qt::WA_TranslucentBackground, true );

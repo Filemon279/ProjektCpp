@@ -16,6 +16,7 @@ Zakupy::Zakupy(QWidget *parent) :
     ui->zakubyTable->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->zakubyTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->zakubyTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->zakubyTable->setFocusPolicy(Qt::NoFocus);
     int id = QFontDatabase::addApplicationFont(":/fonts/fontawesome-webfont.ttf");
 
 
@@ -25,6 +26,7 @@ Zakupy::Zakupy(QWidget *parent) :
 
     ui->pushButton_delete->setFont(fontAws);
     ui->pushButton_delete->setText("\uf1f8");
+
 
     ui->pushButton_clear->setFont(fontAws);
     ui->pushButton_clear->setText("\uf053");
@@ -460,6 +462,16 @@ void Zakupy::on_pushButton_zaplac_clicked()
     podlicz = new Shopped_podlicz(this);
     podlicz->setModal(true);
     connect(this,SIGNAL(sendCash(float)),  podlicz,SLOT(getCash(float)));
+    connect(podlicz,SIGNAL(sendStatusNext(QString)),  this,SLOT(getStatusNext(QString)));
     emit sendCash(brutto);
     podlicz->exec();
+}
+
+void Zakupy::on_zakubyTable_activated(const QModelIndex &index)
+{
+      ui->codeNumber->setFocus();
+}
+
+void Zakupy::getStatusNext(QString info){
+
 }
