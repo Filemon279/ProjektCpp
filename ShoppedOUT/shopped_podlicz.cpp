@@ -66,8 +66,13 @@ void Shopped_podlicz::on_pushButton_karta_clicked()
 void Shopped_podlicz::getStatus(QString info)
 {
     if (info=="done"){
- emit sendStatusNext("done");
-        this->close();
+   emit sendStatusNext("done");
+        this->deleteLater();
           }
 }
 
+
+void Shopped_podlicz::on_pushButton_gotowka_clicked()
+{
+  getStatus("done");
+}

@@ -27,6 +27,7 @@ private slots:
     void on_lineEdit_zaplacono_textChanged(const QString &arg1);
     void on_pushButton_karta_clicked();
     void getStatus(QString info);
+    void on_pushButton_gotowka_clicked();
 };
 
 #endif // SHOPPED_PODLICZ_H

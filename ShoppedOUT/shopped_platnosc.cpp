@@ -17,7 +17,6 @@ shopped_platnosc::shopped_platnosc(QWidget *parent) :
     ui->label_title->setText("Płatność jest przetwarzana...");
     QFuture<void> future = QtConcurrent::run(this,delay,3);
 
-
 }
 
 shopped_platnosc::~shopped_platnosc()
@@ -42,6 +41,6 @@ void shopped_platnosc::delay(int i)
      while (QTime::currentTime() < dieTime)
          QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
      emit sendStatus("done");
-     delete this;
+     this->deleteLater();
 
 }

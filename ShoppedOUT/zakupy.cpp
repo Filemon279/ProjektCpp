@@ -102,23 +102,6 @@ BazaIN = Baza;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void Zakupy::on_pushButton_nr7_clicked()
 {
     QString tekst="";
@@ -280,57 +263,51 @@ void Zakupy::enterAction()
       bool found = false;
       if(ui->zakubyTable->rowCount()>0)
       {
-     for(int i = 0; i < rows; ++i)
-      {
-
-          if(ui->zakubyTable->item(i, 3)->text().contains(ui->codeNumber->text()))
-         {
-
-              int k = ui->zakubyTable->item(i, 4)->text().toInt();
-              k++;
-              ui->zakubyTable->item(i, 4)->setText(QString::number(k));
-             found = true;
-              break;
-          }
-      }
-
-
-
-
-      }
-      if(!found)
-      {
-    ilosc++;
-    ui->zakubyTable->setRowCount(ilosc);
-
-    for(int i=0; i<query.record().count();i++)
-      {
-
-          QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i));
-             newItem->setFlags( Qt::ItemIsSelectable |  Qt::ItemIsEnabled );
-          ui->zakubyTable->setHorizontalHeaderItem(i, newItem);
-
-
-
-      }
-
-      QTableWidgetItem *newItem = new QTableWidgetItem("Sztuk");
-       ui->zakubyTable->setHorizontalHeaderItem(4, newItem);
-
-      while (query.next())
-      {
-          for(int i=0; i<query.record().count();i++)
+         for(int i = 0; i < rows; ++i)
           {
-
-              ui->zakubyTable->setItem(index,i,new QTableWidgetItem(query.value(i).toString()));
-
+              if(ui->zakubyTable->item(i, 3)->text().contains(ui->codeNumber->text()))
+              {
+                  int k = ui->zakubyTable->item(i, 4)->text().toInt();
+                  k++;
+                  ui->zakubyTable->item(i, 4)->setText(QString::number(k));
+                  found = true;
+                  break;
+              }
           }
- ui->zakubyTable->setItem(index,query.record().count(),new QTableWidgetItem("1"));
-      index++;
       }
+              if(!found)
+              {
+            ilosc++;
+            ui->zakubyTable->setRowCount(ilosc);
+
+            for(int i=0; i<query.record().count();i++)
+              {
+
+                  QTableWidgetItem *newItem = new QTableWidgetItem(query.record().fieldName(i));
+                     newItem->setFlags( Qt::ItemIsSelectable |  Qt::ItemIsEnabled );
+                  ui->zakubyTable->setHorizontalHeaderItem(i, newItem);
 
 
-}
+
+              }
+
+              QTableWidgetItem *newItem = new QTableWidgetItem("Sztuk");
+               ui->zakubyTable->setHorizontalHeaderItem(4, newItem);
+
+              while (query.next())
+              {
+                  for(int i=0; i<query.record().count();i++)
+                  {
+
+                      ui->zakubyTable->setItem(index,i,new QTableWidgetItem(query.value(i).toString()));
+
+                  }
+         ui->zakubyTable->setItem(index,query.record().count(),new QTableWidgetItem("1"));
+              index++;
+              }
+
+
+        }
 
 
   }
@@ -473,5 +450,41 @@ void Zakupy::on_zakubyTable_activated(const QModelIndex &index)
 }
 
 void Zakupy::getStatusNext(QString info){
+    QString polecenie="";
+for(int i=0;i<ui->zakubyTable->rowCount();i++)
+{
+//Wywalamy z magazynu to co sprzedalismy
+    QString kod = ui->zakubyTable->item(i,ui->zakubyTable->columnCount()-2)->text(); ;
+    polecenie="SELECT `Ilość` FROM `asortyment` WHERE Kod_Kreskowy = \"";
+    polecenie.append(kod);
+    polecenie.append("\"");
+     QSqlQuery query(polecenie);
+      int nr=0;
+      int ile=0;
+     if(query.next()){
+       nr = query.value("Ilość").toInt();
+       int minus = ui->zakubyTable->item(i,ui->zakubyTable->columnCount()-1)->text().toInt();;
+       ile = nr-minus;
+       QString out = QString::number(nr)+" - "+QString::number(minus)+" = "+QString::number(ile);
+      qDebug(out.toUtf8());
+     }
+    qDebug(polecenie.toUtf8());
 
+
+    polecenie="UPDATE `asortyment` SET `Ilość`=\"";
+    polecenie.append(QString::number(ile)+"\" WHERE Kod_Kreskowy =\"");
+    polecenie.append(kod+"\"");
+    query.exec(polecenie);
+    qDebug(polecenie.toUtf8());
+
+
+}
+
+
+
+index=0;
+ilosc=0;
+ui->zakubyTable->setRowCount(0);
+ui->codeNumber->setFocus();
+podlicz_cene();
 }
